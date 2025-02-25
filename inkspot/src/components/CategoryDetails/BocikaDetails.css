@@ -1,0 +1,129 @@
+.bocika-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 330px;
+    height: 370px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+  }
+  
+  .bocika-card:hover {
+    transform: scale(1.1); /* Increase size by 10% */
+  }
+  
+  .bocika-170 {
+    width: 200px;
+    height: 300px;
+    margin: auto;
+  }
+  
+  .cube {
+    width: 300px;
+    margin: auto;
+  }
+  
+  .bocika-grid {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+    gap: 20px;
+  }
+  
+  .bc1 {
+    background-image: url(../../assets/bc1.png);
+  }
+  
+  .bc2 {
+    background-image: url(../../assets/bc23.png);
+  }
+  
+  .bc3 {
+    background-image: url(../../assets/bc33.png);
+  }
+  
+  .bc4 {
+    background-image: url(../../assets/bc4.png);
+  }
+  
+  .bc5 {
+    background-image: url(../../assets/bc53.png);
+  }
+  
+  .ac1 {
+    background-image: url(../../assets/bc1.png);
+  }
+  
+  .ac2 {
+    background-image: url(../../assets/bc23.png);
+  }
+  
+  .ac3 {
+    background-image: url(../../assets/bc33.png);
+  }
+  
+  .ac4 {
+    background-image: url(../../assets/bc4.png);
+  }
+  
+  .ac5 {
+    background-image: url(../../assets/bc53.png);
+  }
+  
+  /* Responsive Styles */
+  
+  /* Tablets (max-width: 768px) */
+  @media (max-width: 768px) {
+    .bocika-card {
+      width: 280px;       /* Slightly reduced width */
+      height: auto;       /* Allow height to adjust automatically */
+      padding: 10px;
+      /* Remove fixed height to let content flow naturally */
+    }
+    
+    .bocika-170 {
+      width: 180px;
+      height: auto;
+      max-height: 260px;  /* Optional maximum height */
+      margin: auto;
+    }
+    
+    .cube {
+      width: 250px;
+      margin: auto;
+    }
+    
+    .bocika-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+  }
+  
+  /* Mobile Phones (max-width: 480px) */
+  @media (max-width: 480px) {
+    .bocika-card {
+      width: calc(100% - 20px);  /* Use nearly full width with some side margin */
+      height: auto;
+      padding: 8px;
+      margin: 0 auto;
+    }
+    
+    .bocika-170 {
+      width: 150px;
+      height: auto;
+      margin: auto;
+    }
+    
+    .cube {
+      width: 200px;
+      margin: auto;
+    }
+    
+    .bocika-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+  }
+  

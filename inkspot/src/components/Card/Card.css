@@ -1,0 +1,104 @@
+.card {
+    width: 600px;
+    height: 600px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(10px);
+    text-align: center;
+    padding-top: 50px;
+  }
+  
+  .card img {
+    width: 50%;
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease;
+  }
+  
+  .card img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
+  
+  .colorscheme {
+    width: 300px;
+    height: 40px;
+    background-color: blue;
+  }
+  
+  .product-cart {
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  
+  /* Tablets (max-width: 768px) */
+  @media (max-width: 768px) {
+    .card {
+      width: 80%;
+      height: auto;
+      padding: 10px;
+      padding-top: 30px;
+      margin: 0 auto;
+    }
+    
+    .card img {
+      width: 100%;
+      height: 280px;
+    }
+    
+    .colorscheme {
+      width: 80%;
+      height: 40px;
+      margin: 0 auto;
+    }
+    
+    .product-cart {
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+  }
+  
+  /* Mobile Phones (max-width: 480px) */
+  @media (max-width: 480px) {
+    .card {
+      width: calc(100% - 20px); /* Card takes full width minus a 20px margin */
+      max-width: 360px;         /* Maximum width is 360px on larger mobile screens */
+      height: auto;
+      padding: 10px;
+      padding-top: 20px;
+      margin: 0 auto;
+    }
+    
+    .card img {
+      width: 70%;
+      height: auto;
+    }
+    
+    .colorscheme {
+      width: 100%;
+      height: 40px;
+      margin: 0 auto;
+    }
+    
+    .product-cart {
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+    
+  }
+  
+
+  .product-catalog > :first-child img {
+    /* Your custom styles here */
+    width: 75%;
+    margin-top: -10px;
+    /* Other styles... */
+  }
+
+ 
