@@ -1,6 +1,6 @@
 .card {
-    width: 600px;
-    height: 600px;
+    width: 20%;
+    height: 25%;
     border: 1px solid black;
     border-radius: 10px;
     padding: 10px 15px;
@@ -11,16 +11,53 @@
     text-align: center;
     padding-top: 50px;
   }
+
+  .card-name{
+    font-size: 1.6rem;
+  }
   
-  .card img {
-    width: 50%;
-    height: auto; /* Maintain aspect ratio */
+  .card-image {
+   
+    width: 60%;
+    height: 50%; /* Maintain aspect ratio */
     transition: transform 0.3s ease;
   }
   
-  .card img:hover {
+  .card-image:hover {
     transform: scale(1.05); /* Slight zoom on hover */
   }
+
+  .card-description{
+    display: flex;
+    text-align: center;
+    
+    width: auto;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+
+  }
+
+  .card-button{
+    color: white;
+    width: 80%;
+    height: 50px;
+    margin-top: 10px;
+    background-color: black;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  .card-button:hover {
+    transform: scale(1.1); /* Enlarge the button to 110% of its original size */
+  }
+
+
   
   .colorscheme {
     width: 300px;
@@ -45,7 +82,7 @@
       margin: 0 auto;
     }
     
-    .card img {
+    .card-image {
       width: 100%;
       height: 280px;
     }
@@ -74,7 +111,7 @@
       margin: 0 auto;
     }
     
-    .card img {
+    .card-image {
       width: 70%;
       height: auto;
     }
@@ -94,11 +131,5 @@
   }
   
 
-  .product-catalog > :first-child img {
-    /* Your custom styles here */
-    width: 75%;
-    margin-top: -10px;
-    /* Other styles... */
-  }
 
  

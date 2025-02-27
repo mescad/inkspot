@@ -3,7 +3,7 @@ const translations = {
     English: {
       contacts: "Contacts",
       cart: "Cart",
-      heroTitle: "Your trusted ink partners",
+      heroTitle: "Premium ink solutions for every project",
       
       ApaDetails: {
         productTitle: "Water-based Flexographic Inks",

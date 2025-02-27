@@ -3,10 +3,9 @@ import Card from "../Card/Card";
 
 import apa from "../../assets/apa.png";
 import solvent from "../../assets/solvent.png";
-import aux from "../../assets/aux.png";
+import aux from "../../assets/barel.png";
 import bocika from "../../assets/bocika.png";
-import bocika180 from "../../assets/bocika180.png"
-import bocika170 from "../../assets/bocika170.png"
+
 
 import AuxDetails from "../CategoryDetails/AuxDetails";
 import BocikaDetails from "../CategoryDetails/BocikaDetails";
@@ -39,21 +38,25 @@ function Catalog() {
             className="solvent-card"
             name={t.solventCard}
             imgsrc={solvent}
+            details='Profesional and industrial grade solvent based flexographic inks'
             onClick={() => setSelectedProduct("solvent")}
           />
           <Card
             name={t.apaCard}
             imgsrc={apa}
+            details='Profesional and industrial grade water based flexographic inks'
             onClick={() => setSelectedProduct("apa")}
           />
           <Card
             name={t.bocikaCard}
-            imgsrc={bocika180}
+            imgsrc={bocika}
+            details='Solvents and Thinners for flexographic applications and for surface printing'
             onClick={() => setSelectedProduct("bocika")}
           />
           <Card
             name={t.auxCard}
-            imgsrc={bocika170}
+            imgsrc={aux}
+            details='Discover Auxiliary products and supportive products for flexografic print production'
             onClick={() => setSelectedProduct("aux")}
           />
         </div>

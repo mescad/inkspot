@@ -1,6 +1,6 @@
 #root {
-  background-image: url(../../assets/backicons3.png);
-  background-repeat: repeat;
+  
+
   
   z-index: -100;
 }
@@ -9,13 +9,13 @@
   position: relative; /* Establishes a positioning context for the pseudo-element */
   display: flex;
   width: 100%;
-  max-width: 1440px;
+ 
   flex-direction: column;
   margin: auto;
-  margin-top: 100px;
+  padding-top: 50px;
   justify-content: center;
   align-items: center;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
   z-index: 1;
   box-sizing: border-box;
   overflow: hidden; /* Ensure nothing spills outside */
@@ -29,14 +29,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(../../assets/catalog3.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  
+  
   opacity: 1; /* Adjust opacity as needed */
   z-index: -1; /* Places the pseudo-element behind the content */
-  border: 10px solid black;
-  border-radius: 20px;
+
+  
   box-sizing: border-box; /* Include border in the element's dimensions */
 }
 
@@ -51,9 +49,10 @@
 .product-catalog {
   width: 100%;
   margin: auto;
-  display: grid;
+  display: flex;
+  justify-content: center;
   /* Create columns that are at least 600px wide and distribute extra space */
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  
   gap: 50px; /* Adjust gap between cards */
   place-items: center;
 }
