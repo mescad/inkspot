@@ -62,22 +62,21 @@ function Catalog() {
         </div>
       </div>
 
-      {/* Modal Overlay */}
-      {selectedProduct && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-button" onClick={closeModal}>
-              ✖
-            </button>
+{/* Conditional Modal Rendering */}
+{selectedProduct && (
+  <div className="solvent-modal-overlay" onClick={closeModal}>
+    <div className="solvent-modal-content" onClick={(e) => e.stopPropagation()}>
+      <button className="solvent-close-button" onClick={closeModal}>
+        ✖
+      </button>
+      {selectedProduct === "solvent" && <SolventDetails />}
+      {selectedProduct === "apa" && <ApaDetails />}
+      {selectedProduct === "bocika" && <BocikaDetails />}
+      {selectedProduct === "aux" && <AuxDetails />}
+    </div>
+  </div>
+)}
 
-            {/* Render the selected product details component */}
-            {selectedProduct === "solvent" && <SolventDetails />}
-            {selectedProduct === "apa" && <ApaDetails />}
-            {selectedProduct === "bocika" && <BocikaDetails />}
-            {selectedProduct === "aux" && <AuxDetails />}
-          </div>
-        </div>
-      )}
     </>
   );
 }

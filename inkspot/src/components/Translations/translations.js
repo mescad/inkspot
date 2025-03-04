@@ -8,6 +8,14 @@ const translations = {
       ApaDetails: {
         productTitle: "Water-based Flexographic Inks",
         descriptionTitle: "Description",
+        cardTitles: {
+          card1: "Eurokraft VHT Ink",
+          card2: "Eurokraft RT Ink",
+          card3: "Eurokraft FL Ink",
+          card4: "Eurokraft Gloss Ink",
+          card5: "Euraqua MAIL Ink",
+          card6: "Euraqua SP Ink",
+        },
         descriptionText:
           "Water-based flexographic ink is used in flexographic printing, primarily using water as the solvent instead of petroleum-based solvents. It is known for its eco-friendly formulation, low VOC emissions, and fast drying times. This ink is ideal for printing on porous substrates, such as paper, corrugated cardboard, and certain flexible packaging materials. It offers good adhesion, vibrant colors, and cost-effectiveness, making it a popular choice for food packaging, labels, and sustainable printing applications.",
         technicalTitle: "Technical Details",
@@ -43,6 +51,14 @@ const translations = {
       SolventDetails: {
         productTitle: "Solvent-based Flexographic Inks",
         descriptionTitle: "Description",
+        cardTitles: {
+          
+          card2: "Euroflex EXT HD Ink",
+          card3: "Euroflex INT HD Ink",
+          card4: "RENFLEX Ink",
+          card5: "2C Flexo Ink",
+          card6: "Euroflex U Ink",
+        },
         descriptionText:
           "Solvent-based flexographic ink is used in flexographic printing, relying on organic solvents for dispersion and drying. It is known for its rapid drying time, excellent adhesion, and high resistance to moisture, chemicals, and abrasion. This ink is ideal for non-porous substrates such as plastics, films, and flexible packaging. Due to its durability and ability to print on a wide range of surfaces, it is frequently used in industrial packaging, food packaging, and high-performance printing applications. However, proper ventilation and solvent recovery systems are required due to its high VOC emissions.",
         technicalTitle: "Technical Details",
@@ -85,6 +101,8 @@ const translations = {
           card3: "Lamination Adhesive (25kg)",
           card4: "Wax (20kg)",
           card5: "Varnish (20kg)",
+          card6: "Primer (20kg)",
+          card7: "Bioadhesive for clichés",
         },
       },
       Catalog: {
@@ -118,6 +136,14 @@ const translations = {
       ApaDetails: {
         productTitle: "Cerneluri flexografie pe bază de apă",
         descriptionTitle: "Descriere",
+        cardTitles: {
+          card1: "Cerneala Eurokraft VHT",
+          card2: "Cerneala Eurokraft RT",
+          card3: "Cerneala Eurokraft FL",
+          card4: "Cerneala Eurokraft Gloss",
+          card5: "Cerneala Euraqua MAIL",
+          card6: "Cerneala Euraqua SP",
+        },
         descriptionText:
           "Cerneala flexografică pe bază de apă este un tip de cerneală utilizată în imprimarea flexografică, care conține în principal apă ca solvent, în locul solvenților pe bază de petrol. Este cunoscută pentru compoziția sa ecologică, emisiile reduse de COV și uscarea rapidă. Această cerneală este ideală pentru imprimarea pe substraturi poroase, precum hârtia, cartonul ondulat și anumite materiale de ambalaj flexibil. Oferă aderență bună, culori vibrante și eficiență economică, fiind o alegere populară pentru ambalaje alimentare, etichete și aplicații de imprimare sustenabilă.",
         technicalTitle: "Detalii tehnice",
@@ -152,6 +178,14 @@ const translations = {
       SolventDetails: {
         productTitle: "Cerneluri flexografie pe bază de solvenți",
         descriptionTitle: "Descriere",
+        cardTitles: {
+          
+          card2: "Cerneala Euroflex EXT HD",
+          card3: "Cerneala Euroflex INT HD",
+          card4: "Cerneala RENFLEX",
+          card5: "Cerneala 2C Flexo",
+          card6: "Cerneala Euroflex U",
+        },
         descriptionText:
           "Cerneala flexografică pe bază de solvent este un tip de cerneală utilizată în imprimarea flexografică, care se bazează pe solvenți organici pentru dispersie și uscare. Este cunoscută pentru timpul de uscare rapid, aderența excelentă și rezistența ridicată la umiditate, substanțe chimice și abraziune. Această cerneală este ideală pentru substraturi neporoase, cum ar fi materialele plastice, foliile și ambalajele flexibile. Datorită durabilității sale și capacității de a imprima pe o gamă largă de suprafețe, este utilizată frecvent în ambalaje industriale, ambalaje alimentare și aplicații de imprimare de înaltă performanță. Totuși, necesită ventilație adecvată și sisteme de recuperare a solvenților din cauza emisiilor ridicate de COV.",
         technicalTitle: "Detalii tehnice",
@@ -194,6 +228,8 @@ const translations = {
           card3: "Adeziv de laminare (25kg)",
           card4: "Ceară (20kg)",
           card5: "Varnish (20kg)",
+          card6: "Primer (20kg)",
+          card7: "Bioadesiv pentru clisee",
         },
       },
       Catalog: {
@@ -226,6 +262,14 @@ const translations = {
       ApaDetails: {
         productTitle: "Водно-основные флексографические чернила",
         descriptionTitle: "Описание",
+        cardTitles: {
+          card1: "Чернила Eurokraft VHT",
+          card2: "Чернила Eurokraft RT",
+          card3: "Чернила Eurokraft FL",
+          card4: "Чернила Eurokraft Gloss",
+          card5: "Чернила Euraqua MAIL",
+          card6: "Чернила Euraqua SP",
+        },
         descriptionText:
           "Водно-основные флексографические чернила используются при флексографской печати, где в качестве растворителя преимущественно используется вода вместо нефтяных растворителей. Они известны своей экологичностью, низким уровнем ЛОС и быстрой сушкой. Эти чернила идеально подходят для печати на пористых материалах, таких как бумага, гофрокартон и некоторые виды гибкой упаковки. Обладают хорошей адгезией, яркими цветами и экономической эффективностью, что делает их популярным выбором для пищевой упаковки, этикеток и устойчивых печатных приложений.",
         technicalTitle: "Технические детали",
@@ -261,6 +305,14 @@ const translations = {
       SolventDetails: {
         productTitle: "Чернила флексографии на основе растворителей",
         descriptionTitle: "Описание",
+        cardTitles: {
+          
+          card2: "Чернила Euroflex EXT HD",
+          card3: "Чернила Euroflex INT HD",
+          card4: "Чернила RENFLEX",
+          card5: "Чернила 2C Flexo",
+          card6: "Чернила Euroflex U",
+        },
         descriptionText:
           "Чернила флексографии на основе растворителей используются в флексографской печати и полагаются на органические растворители для диспергирования и высыхания. Они известны своей быстрой скоростью высыхания, отличной адгезией и высокой устойчивостью к влаге, химическим веществам и истиранию. Эти чернила идеально подходят для непористых подложек, таких как пластики, плёнки и гибкая упаковка. Благодаря своей долговечности и способности печатать на широком спектре поверхностей, они часто используются в промышленной упаковке, пищевой упаковке и высокопроизводительной печати. Однако из-за высоких выбросов ЛОС требуется соответствующая вентиляция и системы утилизации растворителей.",
         technicalTitle: "Технические детали",
@@ -303,6 +355,8 @@ const translations = {
           card3: "Клеящий состав для ламинации (25кг)",
           card4: "Воск (20кг)",
           card5: "Лак (20кг)",
+          card6: "Грунтовка (20кг)",
+          card7: "Биоадгезив для клише",
         },
       },
       Catalog: {

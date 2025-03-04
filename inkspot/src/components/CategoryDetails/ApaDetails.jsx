@@ -1,7 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { LanguageContext } from "../Translations/LanguageContext";
 import translations from "../Translations/translations";
 import "./ApaDetails.css";
+import SubCard from "./SubCard";
+import AuxCardDetails from "./AuxCardDetails";
+import apa from "../../assets/apa.png";
 
 const ApaDetails = () => {
   // Consume the current language from context
@@ -9,69 +12,79 @@ const ApaDetails = () => {
   // Get the translations for the current language for ApaDetails
   const t = translations[language].ApaDetails;
 
-  // Helper function to render a grid of color cards
-  const renderColorGrid = (colorKeys) => (
-    <section className="color-grid">
-      {colorKeys.map((color) => (
-        <div key={color} className="color-card">
-          <div className={`palete palete-${color}`}></div>
-          <div className="palete-description">{t.colorNames[color]}</div>
-        </div>
-      ))}
-    </section>
-  );
-
-  // Define the order of color keys you want to show
-  const colorsOrder = [
-    "cyan",
-    "magenta",
-    "yellow",
-    "black",
-    "white",
-    "violet",
-    "green",
-    "blue",
-    "purple",
-    "rhodamine",
-    "warmRed",
-    "orange",
-    "others",
-  ];
+   
+  
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  
+  const closeModal = () => {
+    setSelectedProduct(null); // Close the modal when clicking outside
+  };
 
   return (
-    <div className="product-details">
-      <h2>{t.productTitle}</h2>
+    <div className="apa-grid">
+<SubCard className="solvent-card"
+            name={t.cardTitles.card1}
+            imgsrc={apa}
+            details='Profesional and industrial grade solvent based flexographic inks'
+            onClick={() => setSelectedProduct("solvent")}
+            />
+<SubCard className="solvent-card"
+            name={t.cardTitles.card2}
+            imgsrc={apa}
+            details='Profesional and industrial grade solvent based flexographic inks'
+            onClick={() => setSelectedProduct("solvent")}
+            />
+     <SubCard className="solvent-card"
+            name={t.cardTitles.card3}
+            imgsrc={apa}
+            details='Profesional and industrial grade solvent based flexographic inks'
+            onClick={() => setSelectedProduct("solvent")}
+            />
 
-      <section className="prod-info">
-        <div className="prod-description">
-          <h3>{t.descriptionTitle}</h3>
-          <p>{t.descriptionText}</p>
+    <SubCard className="solvent-card"
+            name={t.cardTitles.card4}
+            imgsrc={apa}
+            details='Profesional and industrial grade solvent based flexographic inks'
+            onClick={() => setSelectedProduct("solvent")}
+            />
+     <SubCard className="solvent-card"
+            name={t.cardTitles.card5}
+            imgsrc={apa}
+            details='Profesional and industrial grade solvent based flexographic inks'
+            onClick={() => setSelectedProduct("solvent")}
+            />
+     <SubCard 
+            name={t.cardTitles.card6}
+            imgsrc={apa}
+            details='Profesional and industrial grade solvent based flexographic inks'
+            onClick={() => setSelectedProduct("solvent")}
+            />
+
+   
+
+
+
+      {/* Modal Overlay */}
+      {selectedProduct && (
+        <div className="solventcard-modal-overlay" onClick={closeModal}>
+          <div className="solventcard-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="solventcard-close-button" onClick={closeModal}>
+              ✖
+            </button>
+
+            {/* Render the selected product details component */}
+            {selectedProduct === "solvent" && <AuxCardDetails />}
+            {selectedProduct === "apa" && <AuxCardDetails />}
+            {selectedProduct === "bocika" && <AuxCardDetails />}
+            {selectedProduct === "aux" && <AuxCardDetails />}
+          </div>
         </div>
-        <div className="prod-technical">
-          <h3>{t.technicalTitle}</h3>
-          <ul>
-            <li>{t.technicalList.producer}</li>
-            <li>{t.technicalList.mass}</li>
-            <li>{t.technicalList.temperature}</li>
-          </ul>
-        </div>
-      </section>
-
-      <h2 className="color-title">{t.colorTitles.hirtie}</h2>
-      {renderColorGrid(colorsOrder)}
-
-      <h2 className="color-title">{t.colorTitles.carton}</h2>
-      {renderColorGrid(colorsOrder)}
-
-      <h2 className="color-title">{t.colorTitles.pahare}</h2>
-      {renderColorGrid(colorsOrder)}
-
-      <h2 className="color-title">{t.colorTitles.caiete}</h2>
-      {renderColorGrid(colorsOrder)}
-
-      <h2 className="color-title">{t.colorTitles.servetele}</h2>
-      {renderColorGrid(colorsOrder)}
+      )}
     </div>
+
+
+    
+   
   );
 };
 

@@ -1,7 +1,15 @@
 import React, { useContext } from "react";
 import { LanguageContext } from "../Translations/LanguageContext";
 import translations from "../Translations/translations";
-import "./ApaDetails.css";
+
+import SubCard from "./SubCard";
+import solvent from '../../assets/solvent.png'
+import './SolventDetails.css'
+
+
+import { useState } from "react";
+import SubCardDetails from "./SubCardDetails";
+
 
 const SolventDetails = () => {
   // Consume the current language from the global context
@@ -9,54 +17,82 @@ const SolventDetails = () => {
   // Access the translations for the current language for SolventDetails
   const t = translations[language].SolventDetails;
 
-  // Define the order of colors (keys matching your translations)
-  const colorsOrder = [
-    "cyan",
-    "magenta",
-    "yellow",
-    "black",
-    "white",
-    "violet",
-    "green",
-    "blue",
-    "purple",
-    "rhodamine",
-    "warmred",
-    "orange",
-    "others",
-  ];
+  
 
-  // Helper to render a grid of color cards
-  const renderColorGrid = (colors) => (
-    <section className="color-grid">
-      {colors.map((color) => (
-        <div key={color} className="color-card">
-          <div className={`palete palete-${color}`}></div>
-          <div className="palete-description">{t.colorNames[color]}</div>
-        </div>
-      ))}
-    </section>
-  );
+
+  
+   
+  
+    const [selectedProduct, setSelectedProduct] = useState(null);
+  
+    const closeModal = () => {
+      setSelectedProduct(null); // Close the modal when clicking outside
+    };
+  
+ 
+ 
 
   return (
-    <div className="product-details">
-      <h2>{t.productTitle}</h2>
-      <section className="prod-info">
-        <div className="prod-description">
-          <h3>{t.descriptionTitle}</h3>
-          <p>{t.descriptionText}</p>
+
+
+
+
+  <div className="solvent-grid">
+
+    <SubCard className="solvent-card"
+            name={t.cardTitles.card2}
+            imgsrc={solvent}
+            details='Profesional and industrial grade solvent based flexographic inks'
+            onClick={() => setSelectedProduct("solvent")}
+            />
+     <SubCard className="solvent-card"
+            name={t.cardTitles.card3}
+            imgsrc={solvent}
+            details='Profesional and industrial grade solvent based flexographic inks'
+            onClick={() => setSelectedProduct("solvent")}
+            />
+
+    <SubCard className="solvent-card"
+            name={t.cardTitles.card4}
+            imgsrc={solvent}
+            details='Profesional and industrial grade solvent based flexographic inks'
+            onClick={() => setSelectedProduct("solvent")}
+            />
+     <SubCard className="solvent-card"
+            name={t.cardTitles.card5}
+            imgsrc={solvent}
+            details='Profesional and industrial grade solvent based flexographic inks'
+            onClick={() => setSelectedProduct("solvent")}
+            />
+     <SubCard className="solvent-card"
+            name={t.cardTitles.card6}
+            imgsrc={solvent}
+            details='Profesional and industrial grade solvent based flexographic inks'
+            onClick={() => setSelectedProduct("solvent")}
+            />
+
+   
+
+
+
+      {/* Modal Overlay */}
+      {selectedProduct && (
+        <div className="solventcard-modal-overlay" onClick={closeModal}>
+          <div className="solventcard-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="solventcard-close-button" onClick={closeModal}>
+              ✖
+            </button>
+
+            {/* Render the selected product details component */}
+            {selectedProduct === "solvent" && <SubCardDetails />}
+            {selectedProduct === "apa" && <SubCardDetails />}
+            {selectedProduct === "bocika" && <SubCardDetails />}
+            {selectedProduct === "aux" && <SubCardDetails />}
+          </div>
         </div>
-        <div className="prod-technical">
-          <h3>{t.technicalTitle}</h3>
-          <ul>
-            <li>{t.technicalList.producer}</li>
-            <li>{t.technicalList.mass}</li>
-            <li>{t.technicalList.temperature}</li>
-          </ul>
-        </div>
-      </section>
-      {renderColorGrid(colorsOrder)}
+      )}
     </div>
+    
   );
 };
 
