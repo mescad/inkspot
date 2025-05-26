@@ -19,6 +19,8 @@
   z-index: 1;
   box-sizing: border-box;
   overflow: hidden; /* Ensure nothing spills outside */
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /* Pseudo-element for the background image */
@@ -47,13 +49,11 @@
 }
 
 .product-catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 4 columns for desktop */
+  
   width: 100%;
   margin: auto;
-  display: flex;
-  justify-content: center;
-  /* Create columns that are at least 600px wide and distribute extra space */
-  
-  gap: 50px; /* Adjust gap between cards */
   place-items: center;
 }
 
@@ -103,8 +103,43 @@ body.modal-open {
 
 /* Responsive Styles */
 
+@media (min-width: 1920px) {
+  .product-catalog {
+    grid-template-columns: repeat(4, 1fr); /* 🔧 4 cards per row */
+    gap: 10px;
+    place-items: center;
+    width: 80%;
+    
+  }
+}
+@media (min-width: 1440px) {
+  .product-catalog {
+    grid-template-columns: repeat(4, 1fr); /* 🔧 4 cards per row */
+    gap: 10px;
+    place-items: center;
+    
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .product-catalog {
+    grid-template-columns: repeat(2, 1fr); /* 🔧 2x2 layout */
+    gap: 40px; /* 🔧 reduce empty space between cards */
+    place-items: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .product-catalog {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(2, 1fr); /* 🔧 2 cards per row */
+  
+    place-items: center;
+  }
+}
 /* Tablets (max-width: 768px) */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .catalog {
     margin-top: 80px;
     padding-bottom: 30px;
@@ -117,7 +152,7 @@ body.modal-open {
   }
 
   .product-catalog {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr; /* 2 columns for tablets */
     gap: 30px;
   }
 
@@ -144,7 +179,7 @@ body.modal-open {
   }
 
   .product-catalog {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr; /* 1 column for mobile */
     gap: 20px;
   }
 

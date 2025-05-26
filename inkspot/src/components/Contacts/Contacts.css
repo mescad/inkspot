@@ -78,81 +78,57 @@
 
 
 
+/* NEW: Responsive Height for 1440px and below */
+@media (max-width: 1440px) {
+  .contact-container {
+      height: 520px; /* HIGHLIGHTED: slightly reduced height for desktops */
+  }
+  .contact-form {
+      width: 30%; /* HIGHLIGHTED: slightly wider form for large desktops */
+  }
+  .contact-container h1 {
+      font-size: 32px; /* HIGHLIGHTED: bigger heading on large screens */
+  }
+}
 
+/* NEW: Responsive for 1024px (large tablet/small laptop) */
+@media (max-width: 1024px) {
+  .contact-container {
+      height: 480px; /* HIGHLIGHTED: reduced height */
+      padding-top: 50px; /* HIGHLIGHTED */
+  }
+  .contact-form {
+      width: 55%; /* HIGHLIGHTED: more width for smaller screens */
+  }
+  .contact-form input,
+  .contact-form button {
+      font-size: 15px; /* HIGHLIGHTED: slightly smaller */
+  }
+  .contact-container h1 {
+      font-size: 26px; /* HIGHLIGHTED */
+  }
+}
 
-/* Responsive Styles */
-
-/* Tablets (max-width: 768px) */
+/* Responsive Styles for Tablets (max-width: 768px) */
 @media (max-width: 768px) {
-    .contact-container {
-      height: 500px;
-      margin-top: 100px;
-    }
-    
-    .contact-card {
-      width: 90%;
-      padding: 15px;
-    }
-    
-    .contact-card h1 {
+  .contact-container {
+    height: 500px;
+    margin-top: 100px;
+    padding-top: 40px; /* HIGHLIGHTED: reduce padding */
+  }
+  .contact-form {
+    width: 85%; /* HIGHLIGHTED: much wider for mobile/tablet */
+  }
+  .contact-form input {
+    font-size: 14px;
+  }
+  .contact-form button {
+    font-size: 16px;
+    padding: 10px;
+    width: 60%; /* HIGHLIGHTED: make button wider */
+    height: 50px;
+  }
+  .contact-container h1 {
       font-size: 24px;
-    }
-    
-    .contact-info p {
-      font-size: 20px;
-    }
-    
-    .social-icons a {
-      font-size: 20px;
-      margin: 0 8px;
-    }
-    
-    .contact-form input {
-      font-size: 14px;
-    }
-    
-    .contact-form button {
-      font-size: 16px;
-      padding: 10px;
-    }
   }
-  
-  /* Mobile Phones (max-width: 480px) */
-  @media (max-width: 480px) {
-    .contact-container {
-      height: 400px;
-      margin-top: 80px;
-    }
-    
-    .contact-card {
-      width: 95%;
-      padding: 10px;
-    }
-    
-    .contact-card h1 {
-      font-size: 20px;
-    }
-    
-    .contact-info p {
-      font-size: 18px;
-    }
-    
-    .social-icons a {
-      font-size: 18px;
-      margin: 0 5px;
-    }
-    
-    .contact-form input {
-      font-size: 14px;
-      padding: 8px;
-    }
-    
-    .contact-form button {
-      font-size: 16px;
-      padding: 8px;
-    }
-    
-    .copyright {
-      font-size: 12px;
-    }
-  }
+}

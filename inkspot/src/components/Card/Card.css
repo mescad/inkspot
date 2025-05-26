@@ -1,16 +1,26 @@
 .card {
-    width: 20%;
-    height: 25%;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 10px 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    background: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
-    backdrop-filter: blur(10px);
-    text-align: center;
-    padding-top: 50px;
-  }
+  width: 300px; /* 🟢 Fixed width that maintains original sizing */
+  max-width: 90vw;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 50px 15px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  text-align: center;
+
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  
+
+  height: 500px;
+}
+
 
   .card-name{
     font-size: 1.6rem;
@@ -72,6 +82,20 @@
     justify-content: space-evenly;
   }
   
+
+
+  @media (min-width: 1440px) {
+    .card {
+      width: 300px; /* ✅ Fit 4 cards per row cleanly */
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1439px) {
+    .card {
+      width: 360px; /* 🔧 slightly larger cards */
+    }
+  }
+
   /* Tablets (max-width: 768px) */
   @media (max-width: 768px) {
     .card {
@@ -84,7 +108,9 @@
     
     .card-image {
       width: 100%;
-      height: 280px;
+      height: auto;
+      aspect-ratio: 4 / 3; /* ✅ Maintains proportion */
+      object-fit: contain; /* or `cover` if you want it to fill the box */
     }
     
     .colorscheme {

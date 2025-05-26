@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { LanguageContext } from "../Translations/LanguageContext";
 import translations from "../Translations/translations";
-import './SubCardDetails.css'
+import './ApaSubCardDetails.css'
 
-function SubCardDetails({pdfRO,pdfRU,pdfENG,title,descriptionText}){
+function ApaSubCardDetails({pdfRO,pdfRU,pdfENG,productTitle,descriptionText}){
   // Consume the current language from the global context
   const { language } = useContext(LanguageContext);
   // Access the translations for the current language for SolventDetails
-  const t = translations[language].SolventDetails;
+  const t = translations[language].ApaDetails;
 
   // Define the order of colors (keys matching your translations)
   const colorsOrder = [
@@ -21,7 +21,7 @@ function SubCardDetails({pdfRO,pdfRU,pdfENG,title,descriptionText}){
     "blue",
     "purple",
     "rhodamine",
-    "warmred",
+    "warmRed",
     "orange",
     "others",
   ];
@@ -41,7 +41,6 @@ function SubCardDetails({pdfRO,pdfRU,pdfENG,title,descriptionText}){
     </section>
   );
 
-
   const openPDF = (pdfPath) => {
     window.open(pdfPath, '_blank', 'noopener,noreferrer');
   };
@@ -53,7 +52,7 @@ function SubCardDetails({pdfRO,pdfRU,pdfENG,title,descriptionText}){
 
 
     <div className="product-details">
-      <h2>{title}</h2>
+      <h2>{productTitle}</h2>
       <section className="prod-info">
         <div className="prod-description">
           <h3>{t.descriptionTitle}</h3>
@@ -73,10 +72,34 @@ function SubCardDetails({pdfRO,pdfRU,pdfENG,title,descriptionText}){
           <button type="button" className='pdf-button' onClick={() => openPDF(pdfENG)}>ENG</button>
 
           </div>
-   
         </div>
       </section>
+      <div className="color-group">
+     <h2>{t.colorTitles.hirtie}</h2>
+      
       {renderColorGrid(colorsOrder)}
+      </div>
+      <div className="color-group">
+     <h2>{t.colorTitles.pahare}</h2>
+      
+      {renderColorGrid(colorsOrder)}
+      </div>
+      <div className="color-group">
+     <h2>{t.colorTitles.carton}</h2>
+      
+      {renderColorGrid(colorsOrder)}
+      </div>
+      <div className="color-group">
+     <h2>{t.colorTitles.servetele}</h2>
+      
+      {renderColorGrid(colorsOrder)}
+      </div>
+      <div className="color-group">
+     <h2>{t.colorTitles.caiete}</h2>
+      
+      {renderColorGrid(colorsOrder)}
+      </div>
+      
       </div>
     
     
@@ -84,4 +107,4 @@ function SubCardDetails({pdfRO,pdfRU,pdfENG,title,descriptionText}){
     );
 }
 
-export default SubCardDetails
+export default ApaSubCardDetails

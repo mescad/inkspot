@@ -10,6 +10,13 @@ function Hero(){
     const { language } = useContext(LanguageContext);
     const t = translations[language]; // Get the text for the current language
 
+    const handleProductClick = () => {
+        const productSection = document.getElementById("catalog");
+        if (productSection) {
+            productSection.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return(
         <>
         
@@ -18,8 +25,8 @@ function Hero(){
             {/*<img className="heroimage" alt="heroimage" src={heroImg}/>*/}
             <div className="hero-group">   
             <h1 className="hero-title">{t.heroTitle}</h1>
-            <h2 className="hero-subtitle">Discover our premium selection of high-quality flexographic inks designed for professional printing and artistic excellence</h2>
-            <button className="hero-button">Browse Collection</button>
+            <h2 className="hero-subtitle">{t.heroSubtitle}</h2>
+            <button className="hero-button" onClick={handleProductClick}>{t.heroButton}</button>
             </div>
         </div>
         

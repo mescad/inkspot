@@ -1,6 +1,21 @@
 .apa-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
+  gap: 40px;
   align-items: stretch;
+}
+
+
+@media (min-width:768px) and (max-width:1440px){
+  .apa-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    gap: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .apa-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    gap: 10px;
+  }
 }

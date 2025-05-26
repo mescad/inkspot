@@ -30,7 +30,7 @@ function Catalog() {
 
   return (
     <>
-      <div className="catalog">
+      <div className="catalog" id="catalog">
         <h1>{t.catalogTitle}</h1>
 
         <div className="product-catalog">
@@ -38,25 +38,25 @@ function Catalog() {
             className="solvent-card"
             name={t.solventCard}
             imgsrc={solvent}
-            details='Profesional and industrial grade solvent based flexographic inks'
+            details={t.solventCardDescription}
             onClick={() => setSelectedProduct("solvent")}
           />
           <Card
             name={t.apaCard}
             imgsrc={apa}
-            details='Profesional and industrial grade water based flexographic inks'
+            details={t.apaCardDescription}
             onClick={() => setSelectedProduct("apa")}
           />
           <Card
             name={t.bocikaCard}
             imgsrc={bocika}
-            details='Solvents and Thinners for flexographic applications and for surface printing'
+            details={t.bocikaCardDescription}
             onClick={() => setSelectedProduct("bocika")}
           />
           <Card
             name={t.auxCard}
             imgsrc={aux}
-            details='Discover Auxiliary products and supportive products for flexografic print production'
+            details={t.auxCardDescription}  
             onClick={() => setSelectedProduct("aux")}
           />
         </div>

@@ -1,74 +1,151 @@
 .hero {
-    position: relative;
-    width: 100%;
-   
-    min-height: 900px;
-    max-height:1000px; /* Ensures the container doesn't become too short */
-    overflow: hidden;
-    border-bottom: 5px solid black;
-  }
-  
-  .hero img {
-    width: 100%;
-    
-    object-fit: cover;
-  }
-
-  .hero-group{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-85%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap:20px;
-  }
-  
-  .hero-title {
-   
-    font-size: 3rem;
-    color: black;
-    
-    text-align: center;
-    margin: 0;
-  }
-
-.hero-subtitle{
-  font-size: 1.4rem;
- color: black;
- width: 800px;
-
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 140px 40px 60px; /* top padding accounts for navbar height */
+  border-bottom: 5px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.hero-button{
-color: white;
-font-weight: 700;
-width: 200px;
-height: 70px;
-font-size: 1.2rem;
-border-radius: 10px;
-background-color: black;
-cursor: pointer;
-transition: transform 0.3s ease; /* Adds a smooth transition */
+.hero img {
+  width: 100%;
+  object-fit: cover;
+}
 
+.hero-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+}
 
+.hero-title {
+  font-size: 3rem;
+  color: black;
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  color: black;
+  max-width: 800px;
+  width: 100%;
+}
+
+.hero-button {
+  color: white;
+  font-weight: 700;
+  width: 200px;
+  height: 70px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  background-color: black;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .hero-button:hover {
-  transform: scale(1.1); /* Enlarge the button to 110% of its original size */
+  transform: scale(1.1);
 }
 
-
-  
-  /* On very small screens, override the height with a viewport-based value */
-  @media (max-width: 480px) {
-    .hero {
-      height: 60vh; /* For instance, 50% of viewport height */
-    }
-    
-    .hero-title {
-      font-size: 1.6rem;
-    }
+/* Medium screens: 1024px to 1440px */
+@media (max-width: 1440px) {
+  .hero {
+    padding: 130px 40px 50px;
   }
-  
+
+  .hero-group {
+    max-width: 1000px;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .hero-button {
+    width: 180px;
+    height: 60px;
+  }
+}
+
+/* Tablets: 768px to 1023px */
+@media (max-width: 1023px) {
+  .hero {
+    padding: 120px 30px 50px;
+  }
+
+  .hero-group {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    width: 100%;
+  }
+
+  .hero-button {
+    width: 170px;
+    height: 55px;
+  }
+}
+
+/* Phones: < 768px */
+@media (max-width: 767px) {
+  .hero {
+    padding: 110px 20px 40px;
+  }
+
+  .hero-group {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-button {
+    width: 160px;
+    height: 50px;
+    font-size: 1rem;
+  }
+}
+
+/* Small Phones: < 480px */
+@media (max-width: 480px) {
+  .hero {
+    padding: 100px 15px 40px;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-button {
+    width: 150px;
+    height: 45px;
+    font-size: 0.95rem;
+  }
+}

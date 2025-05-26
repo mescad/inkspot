@@ -49,6 +49,13 @@ function Navbar() {
     }
   };
 
+  const handleAboutClick = () => {
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav className="navbar">
       <div className="nav-group">
@@ -58,10 +65,10 @@ function Navbar() {
       </div>
      
       <div className="nav-options">
-        <h2>Home</h2>
+        <h2>{t.navbarHome}</h2>
         
         <h2 className="contacts" onClick={handleContactsClick}>{t.contacts}</h2>
-        <h2>About Us</h2>
+        <h2 className="about-us" onClick={handleAboutClick}>{t.navbarAbout}</h2>
         <div className="dropdown" ref={dropdownRef}>
           <button className="dropdown-toggle" onClick={toggleDropdown}>
             <img src={flags[language]} alt={language} title={language} className="flag" />

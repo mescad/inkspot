@@ -1,141 +1,223 @@
 /* Card Component CSS */
 .subcard {
-    width: 100%;
-    /* Remove fixed height to allow natural content flow */
-    height: auto;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 10px 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
-    text-align: center;
-    padding-top: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* Ensure the card uses proper sizing and box-model */
-    box-sizing: border-box;
+  width: auto;
+  max-width: 100%;
+  /* Remove fixed height to allow natural content flow */
+  height: auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+ 
+  /* Ensure the card uses proper sizing and box-model */
+  box-sizing: border-box;
+}
+
+
+
+/* Add at the bottom or in SubCard.css if that's your card */
+@keyframes card-pop {
+  0%   { transform: scale(1);}
+  50%  { transform: scale(1.08);}
+  100% { transform: scale(1);}
+}
+
+.card-clicked {
+  animation: card-pop 1s cubic-bezier(0.55, 0.06, 0.68, 0.19);
 }
 
 /* Card Title */
 .subcard-name {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
+  height: 40px;
+  font-size: 1.6rem;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
 }
 
 /* Card Image */
 .subcard-image {
-    width: 60%;
-    height: auto;
-    transition: transform 0.3s ease;
-    margin: 0 auto;
+  
+  height: 220px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  margin: 0 auto;
 }
 
 .subcard-image:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /* Card Description */
 .subcard-description {
-    width: auto;
-    text-align: left;
-    margin: 20px auto;
-    padding: 0 10%;
+  height: 80px;                         /* 🔧 adjust based on remaining space */
+  padding: 0 10%;
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+ 
+  
+ 
 }
 
 /* Card Button */
 .subcard-button {
-    color: white;
-    width: 80%;
-    height: 50px;
-    margin: 10px auto 20px auto;
-    background-color: black;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 20px;
-    transition: transform 0.3s ease;
-    border: none;
+  color: white;
+  width: 80%;
+  height: 50px;
+  margin: 10px auto 10px auto;
+  background-color: black;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+  border: none;
+ 
+  flex-shrink: 0;
 }
 
 .subcard-button:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* Additional Elements */
 .colorscheme {
-    width: 300px;
-    height: 40px;
-    background-color: blue;
-    margin: 0 auto;
+  width: 300px;
+  height: 40px;
+  background-color: blue;
+  margin: 0 auto;
 }
 
 .product-cart {
-    margin-top: 20px;
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
+  margin-top: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
 }
 
 /* Media queries for smaller screens */
-/* Tablets (max-width: 768px) */
-@media (max-width: 768px) {
-    .solvent-grid {
-      gap: 30px;
-    }
-    .subcard {
-      width: 80%;
-      height: auto;
-      padding: 10px;
-      padding-top: 30px;
-      margin: 0 auto;
-    }
+
+@media (min-width:1441px){
+  .subcard-name {
+    height: 30px;
     
-    .subcard-image {
-      width: 100%;
-      height: 280px;
-    }
+   
+  }
+  .subcard-description {
+    height: 90px;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);                       /* 🔧 adjust based on remaining space */
+   
+   
     
-    .colorscheme {
-      width: 80%;
-      height: 40px;
-    }
-    
-    .product-cart {
-      flex-direction: column;
-      gap: 15px;
-      align-items: center;
-    }
+   
+  }
 }
 
-/* Mobile Phones (max-width: 480px) */
-@media (max-width: 480px) {
-    .solvent-grid {
-      gap: 20px;
-    }
-    .subcard {
-      width: calc(100% - 20px);
-      max-width: 360px;
-      height: auto;
-      padding: 10px;
-      padding-top: 20px;
-      margin: 0 auto;
-    }
+@media (min-width:768px) and (max-width:1440px){
+  .subcard {
+    width: 100%;
+    padding: 10px;
+    margin: 0 auto;
+    height: 440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .subcard-name {
+    font-size: 16px;
+    height: 10%;
+  }
+
+  .subcard-image {
+    max-width: 150px;
+    padding-top: 5px;
+  }
+
+  .subcard-description {
+    font-size:11px;
+    padding: 0;
     
-    .subcard-image {
-      width: 70%;
-      height: auto;
-    }
+
+    padding-left: 5px;
+    padding-right: 5px;
+    flex-grow: 1;              /* 🔧 allows it to grow and push the button down */
+  min-height: 60px;          /* 🔧 ensures space even if content is short */
+  overflow-wrap: break-word;
+  }
+
+  .subcard-button {
+    width: 80%;
+    font-size: 16px;
+    height: 30px;
+    margin-top: auto;
     
-    .colorscheme {
-      width: 100%;
-      height: 40px;
-    }
+  }
+}
+
+@media (max-width: 767px) {
+  .subcard {
+    width: 100%;
+    padding: 5px;
+
+    margin: 0 auto;
+    height: 300px;
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  }
+
+  .subcard-name {
+    font-size: 14px;
+    height: 10%;
+  }
+
+  .subcard-image {
+    max-width: 80px;
+    max-height: 100px;
+    padding-top: 5px;
+  }
+
+  .subcard-description {
+    font-size:9px;
+    margin-top: 5px;
     
-    .product-cart {
-      flex-direction: column;
-      gap: 10px;
-      align-items: center;
-    }
+    margin-bottom: 5px;
+
+    padding-left: 5px;
+    padding-right: 5px;
+
+    flex-grow: 1;              /* 🔧 allows it to grow and push the button down */
+  min-height: 60px;          /* 🔧 ensures space even if content is short */
+  overflow-wrap: break-word;
+
+  height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  
+  -webkit-box-orient: vertical;
+  }
+
+  .subcard-button {
+    width: 80%;
+    font-size: 12px;
+    height: 30px;
+    
+    margin-top: auto;
+    margin-bottom: 5px;
+   
+    
+  }
 }

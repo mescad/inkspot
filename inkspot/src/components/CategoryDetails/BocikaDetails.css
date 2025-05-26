@@ -1,3 +1,13 @@
+
+.bocika-grid {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  align-items: stretch;
+}
+
+
 .bocika-card {
     display: flex;
     flex-direction: column;
@@ -25,12 +35,7 @@
     margin: auto;
   }
   
-  .bocika-grid {
-    display: grid;
-    place-items: center;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
+ 
   
   .bc1 {
     background-image: url(../../assets/bc1.png);
@@ -75,55 +80,16 @@
   /* Responsive Styles */
   
   /* Tablets (max-width: 768px) */
-  @media (max-width: 768px) {
-    .bocika-card {
-      width: 280px;       /* Slightly reduced width */
-      height: auto;       /* Allow height to adjust automatically */
-      padding: 10px;
-      /* Remove fixed height to let content flow naturally */
-    }
-    
-    .bocika-170 {
-      width: 180px;
-      height: auto;
-      max-height: 260px;  /* Optional maximum height */
-      margin: auto;
-    }
-    
-    .cube {
-      width: 250px;
-      margin: auto;
-    }
-    
+  @media (min-width:768px) and (max-width:1440px){
     .bocika-grid {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+      gap: 20px;
     }
   }
   
-  /* Mobile Phones (max-width: 480px) */
-  @media (max-width: 480px) {
-    .bocika-card {
-      width: calc(100% - 20px);  /* Use nearly full width with some side margin */
-      height: auto;
-      padding: 8px;
-      margin: 0 auto;
-    }
-    
-    .bocika-170 {
-      width: 150px;
-      height: auto;
-      margin: auto;
-    }
-    
-    .cube {
-      width: 200px;
-      margin: auto;
-    }
-    
+  @media (max-width: 767px) {
     .bocika-grid {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
       gap: 10px;
     }
   }
-  

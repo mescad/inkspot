@@ -7,6 +7,7 @@ import Footer from './components/Footer/Footer';
 
 import Catalog from './components/Catalog/Catalog';
 import Contacts from './components/Contacts/Contacts';
+import About from './components/About/About';
 
 import { LanguageProvider } from "./components/Translations/LanguageContext";
 
@@ -19,6 +20,7 @@ function App() {
     <Navbar/>
     <Hero/>
     <Catalog/>
+    <About/>
     <Contacts/>
     <Footer/>
     </LanguageProvider> 
