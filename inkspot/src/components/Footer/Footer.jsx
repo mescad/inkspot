@@ -40,10 +40,10 @@ function Footer() {
       <div className="contact-info">
         <h1>{t.footerContactInfo}</h1>
         <p>
-          <FontAwesomeIcon icon={faPhone} /> +373 (0) 69683324
+          <FontAwesomeIcon icon={faPhone} /> +373 (0) 69136658
         </p>
         <p>
-          <FontAwesomeIcon icon={faEnvelope} /> galapac@gmail.com
+          <FontAwesomeIcon icon={faEnvelope} /> galapac97@gmail.com
         </p>
       </div>
 

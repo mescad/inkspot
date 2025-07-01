@@ -8,7 +8,7 @@ import "./BocikaDetails.css";
 import SubCard from "./SubCard";
 import AuxCardDetails from "./AuxCardDetails";
 
-import flexoPDF_RO from '../../assets/technicals/bocika/Fisa tehnica Metoxipropanol.pdf'
+import flexoPDF_RO from '../../assets/technicals/bocika/SolventFlexoGalapac_RO.pdf'
 import ethilAcetatePDF_RO from "../../assets/technicals/bocika/MSDS ACETAT DE ETIL.pdf"
 import metoxiPDF_RO from '../../assets/technicals/bocika/Fisa tehnica Metoxipropanol.pdf'
 import etoxiPDF_RO from "../../assets/technicals/bocika/MSDS ETOXIPROPANOL - 1-ETOXI-2-PROPANOL.pdf"

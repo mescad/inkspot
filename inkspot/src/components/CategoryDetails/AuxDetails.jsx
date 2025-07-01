@@ -8,11 +8,11 @@ import SubCard from "./SubCard";
 
 import washingPDF_RO from '../../assets/technicals/aux/TDS SOLUTIE SPALARE ANILOXI SOLVENT-RO.PDF'
 import catalystPDF_RO from '../../assets/technicals/aux/catalizator_RO.pdf'
-import adhesivePDF_RO from '../../assets/technicals/aux/Adeziv-Laminare_RO.pdf'
+import adhesivePDF_RO from '../../assets/technicals/aux/Adeziv-Laminare221_RO.doc'
 import waxPDF_RO from '../../assets/technicals/aux/wax_RO.pdf'
-import varnishPDF_RO from '../../assets/technicals/aux/TDS - SOLUTIE DE varnish_RO.pdf'
+import varnishPDF_RO from '../../assets/technicals/aux/TDS - EUROFLEX UNIVERSAL OPV_EN VARNISH.pdf'
 import primerPDF_RO from '../../assets/technicals/aux/PRIMER 2C PU 907020111.pdf'
-import bioadhesivePDF_RO from '../../assets/technicals/aux/bioadeziv-laminare.doc'
+import bioadhesivePDF_RO from '../../assets/technicals/aux/BIOADESIV-CLICHE-ENG.pdf'
 
 
 const AuxDetails = () => {
