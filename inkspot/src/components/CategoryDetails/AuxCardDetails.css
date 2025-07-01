@@ -1,0 +1,13 @@
+.option-list{
+    display: flex;
+    gap: 50px;
+}
+
+
+@media (max-width: 767px) {
+    .option-list {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+}

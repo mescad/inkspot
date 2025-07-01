@@ -3,10 +3,9 @@ import Card from "../Card/Card";
 
 import apa from "../../assets/apa.png";
 import solvent from "../../assets/solvent.png";
-import aux from "../../assets/aux.png";
+import aux from "../../assets/barel.png";
 import bocika from "../../assets/bocika.png";
-import bocika180 from "../../assets/bocika180.png"
-import bocika170 from "../../assets/bocika170.png"
+
 
 import AuxDetails from "../CategoryDetails/AuxDetails";
 import BocikaDetails from "../CategoryDetails/BocikaDetails";
@@ -31,7 +30,7 @@ function Catalog() {
 
   return (
     <>
-      <div className="catalog">
+      <div className="catalog" id="catalog">
         <h1>{t.catalogTitle}</h1>
 
         <div className="product-catalog">
@@ -39,42 +38,45 @@ function Catalog() {
             className="solvent-card"
             name={t.solventCard}
             imgsrc={solvent}
+            details={t.solventCardDescription}
             onClick={() => setSelectedProduct("solvent")}
           />
           <Card
             name={t.apaCard}
             imgsrc={apa}
+            details={t.apaCardDescription}
             onClick={() => setSelectedProduct("apa")}
           />
           <Card
             name={t.bocikaCard}
-            imgsrc={bocika180}
+            imgsrc={bocika}
+            details={t.bocikaCardDescription}
             onClick={() => setSelectedProduct("bocika")}
           />
           <Card
             name={t.auxCard}
-            imgsrc={bocika170}
+            imgsrc={aux}
+            details={t.auxCardDescription}  
             onClick={() => setSelectedProduct("aux")}
           />
         </div>
       </div>
 
-      {/* Modal Overlay */}
-      {selectedProduct && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-button" onClick={closeModal}>
-              ✖
-            </button>
+{/* Conditional Modal Rendering */}
+{selectedProduct && (
+  <div className="solvent-modal-overlay" onClick={closeModal}>
+    <div className="solvent-modal-content" onClick={(e) => e.stopPropagation()}>
+      <button className="solvent-close-button" onClick={closeModal}>
+        ✖
+      </button>
+      {selectedProduct === "solvent" && <SolventDetails />}
+      {selectedProduct === "apa" && <ApaDetails />}
+      {selectedProduct === "bocika" && <BocikaDetails />}
+      {selectedProduct === "aux" && <AuxDetails />}
+    </div>
+  </div>
+)}
 
-            {/* Render the selected product details component */}
-            {selectedProduct === "solvent" && <SolventDetails />}
-            {selectedProduct === "apa" && <ApaDetails />}
-            {selectedProduct === "bocika" && <BocikaDetails />}
-            {selectedProduct === "aux" && <AuxDetails />}
-          </div>
-        </div>
-      )}
     </>
   );
 }

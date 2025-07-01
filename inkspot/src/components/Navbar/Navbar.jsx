@@ -2,6 +2,7 @@ import { useContext, useRef, useEffect, useState } from "react";
 import { LanguageContext } from "../Translations/LanguageContext";
 import translations from "../Translations/translations";
 import "./Navbar.css";
+import logo from '../../assets/logo.png'
 
 import usFlag from "../../assets/uk-flag.png"; // English
 import roFlag from "../../assets/ro-flag.png"; // Romana
@@ -48,12 +49,26 @@ function Navbar() {
     }
   };
 
+  const handleAboutClick = () => {
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav className="navbar">
+      <div className="nav-group">
+      <img className='nav-logo' alt='logo' src={logo}/>
       <h1 className="nav-title">Galapac</h1>
+
+      </div>
+     
       <div className="nav-options">
+        <h2>{t.navbarHome}</h2>
+        
         <h2 className="contacts" onClick={handleContactsClick}>{t.contacts}</h2>
-        <h2 className="cart">{t.cart}</h2>
+        <h2 className="about-us" onClick={handleAboutClick}>{t.navbarAbout}</h2>
         <div className="dropdown" ref={dropdownRef}>
           <button className="dropdown-toggle" onClick={toggleDropdown}>
             <img src={flags[language]} alt={language} title={language} className="flag" />

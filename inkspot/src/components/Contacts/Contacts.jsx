@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext,useState } from "react";
 import "./Contacts.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+
 import { LanguageContext } from "../Translations/LanguageContext";
 import translations from "../Translations/translations";
+
+import emailjs from 'emailjs-com';
 
 function Contacts() {
   // Get the current language from the context
@@ -12,46 +12,59 @@ function Contacts() {
   // Get the translations for Contacts
   const t = translations[language].Contacts;
 
+
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    phone: ''
+  });
+  const [status, setStatus] = useState('');
+
+  const handleChange = e => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    // Use your EmailJS credentials
+    emailjs.send(
+      'service_lvqft9e',    // replace with your EmailJS service ID
+      'template_7ux4m7e',   // replace with your EmailJS template ID
+      form,
+      'Gbeee8cyyDAvaiV5V'        // replace with your EmailJS user/public key
+    )
+    .then((result) => {
+      setStatus('Message sent successfully!');
+      setForm({ name: '', email: '', phone: '' });
+    }, (error) => {
+      setStatus('Failed to send message. Please try again later.');
+    });
+  };
+
   return (
     <div id='contacts' className="contact-container">
-      <div className="contact-card">
+      
         <h1>{t.title}</h1>
 
-        <div className="contact-info">
-          <p>
-            <FontAwesomeIcon icon={faPhone} /> +373 (0) 69683324
-          </p>
-          <p>
-            <FontAwesomeIcon icon={faEnvelope} /> galapac@gmail.com
-          </p>
-        </div>
+        
 
-        <form className="contact-form">
-          <input type="text" placeholder={t.form.namePlaceholder} required />
-          <input type="email" placeholder={t.form.emailPlaceholder} required />
-          <input type="tel" placeholder={t.form.phonePlaceholder} required />
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <input type="text" name="name" placeholder={t.form.namePlaceholder} required value={form.name} // HIGHLIGHTED
+          onChange={handleChange} />
+          <input type="email" name="email" placeholder={t.form.emailPlaceholder} required value={form.email} // HIGHLIGHTED
+          onChange={handleChange}/>
+          <input type="tel" name="phone" placeholder={t.form.phonePlaceholder} required value={form.phone} // HIGHLIGHTED
+          onChange={handleChange}/>
           <button type="submit">{t.form.sendButton}</button>
         </form>
+        {status && <p>{status}</p>}
 
-        <div className="social-icons">
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faFacebook} size="2x" />
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faInstagram} size="2x" />
-          </a>
-        </div>
-
-        <p className="copyright">{t.copyright}</p>
-      </div>
+       
+      
     </div>
   );
 }
