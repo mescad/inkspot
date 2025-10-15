@@ -3,6 +3,26 @@
     gap: 50px;
 }
 
+.subcard-title{
+    color: white;
+    -webkit-text-stroke: 0.2px black;
+    background-color: rgba(0, 0, 0, 0.5);
+  
+  }
+  
+  .grid-prodtype{
+    color: white;
+    -webkit-text-stroke: 0.2px black;
+    background-color: rgba(0, 0, 0, 0.5);
+  
+  }
+
+  .options-title{
+    color: white;
+    -webkit-text-stroke: 0.2px black;
+    background-color: rgba(0, 0, 0, 0.5);
+  
+  }
 
 @media (max-width: 767px) {
     .option-list {

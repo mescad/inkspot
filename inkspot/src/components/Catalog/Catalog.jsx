@@ -2,7 +2,7 @@ import "./Catalog.css";
 import Card from "../Card/Card";
 
 import apa from "../../assets/apa.png";
-import solvent from "../../assets/solvent.png";
+import solvent from "../../assets/solvent1.png";
 import aux from "../../assets/barel.png";
 import bocika from "../../assets/bocika.png";
 
@@ -40,24 +40,31 @@ function Catalog() {
             imgsrc={solvent}
             details={t.solventCardDescription}
             onClick={() => setSelectedProduct("solvent")}
+            
           />
           <Card
+           className="apa-card"
             name={t.apaCard}
             imgsrc={apa}
             details={t.apaCardDescription}
             onClick={() => setSelectedProduct("apa")}
+            
           />
           <Card
+            className="bocika-card"
             name={t.bocikaCard}
             imgsrc={bocika}
             details={t.bocikaCardDescription}
             onClick={() => setSelectedProduct("bocika")}
+            
           />
           <Card
+            className="aux-card"
             name={t.auxCard}
             imgsrc={aux}
             details={t.auxCardDescription}  
             onClick={() => setSelectedProduct("aux")}
+            
           />
         </div>
       </div>

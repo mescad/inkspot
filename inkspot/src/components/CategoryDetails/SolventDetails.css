@@ -35,6 +35,9 @@
     text-align: center;
     position: relative;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    background-image: url(../../assets/her2.png);
+    background-position: center;
+    background-size: cover;
 }
 
 /* Close button with a higher z-index to ensure it appears above all content */
@@ -54,6 +57,17 @@ body.modal-open {
     overflow: hidden;
 }
 
+.subcard-title{
+    color: white;
+    -webkit-text-stroke: 0.2px black;
+  
+  }
+  
+  .grid-prodtype{
+    color: white;
+    -webkit-text-stroke: 0.2px black;
+  
+  }
 
 
 
@@ -85,6 +99,9 @@ body.modal-open {
     text-align: center;
     position: relative;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    background-image: url(../../assets/her2.png);
+    background-position: center;
+    background-size: cover;
 }
 
 /* Close button with a higher z-index to ensure it appears above all content */
@@ -103,7 +120,6 @@ body.modal-open {
 body.modal-open {
     overflow: hidden;
 }
-
 
 
 @media (max-width: 767px) {

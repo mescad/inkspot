@@ -52,7 +52,7 @@ function ApaSubCardDetails({pdfRO,pdfRU,pdfENG,productTitle,descriptionText}){
 
 
     <div className="product-details">
-      <h2>{productTitle}</h2>
+      <h2 className ='subcard-title'>{productTitle}</h2>
       <section className="prod-info">
         <div className="prod-description">
           <h3>{t.descriptionTitle}</h3>
@@ -75,27 +75,27 @@ function ApaSubCardDetails({pdfRO,pdfRU,pdfENG,productTitle,descriptionText}){
         </div>
       </section>
       <div className="color-group">
-     <h2>{t.colorTitles.hirtie}</h2>
+     <h2 className="grid-prodtype">{t.colorTitles.hirtie}</h2>
       
       {renderColorGrid(colorsOrder)}
       </div>
       <div className="color-group">
-     <h2>{t.colorTitles.pahare}</h2>
+     <h2 className="grid-prodtype">{t.colorTitles.pahare}</h2>
       
       {renderColorGrid(colorsOrder)}
       </div>
       <div className="color-group">
-     <h2>{t.colorTitles.carton}</h2>
+     <h2 className="grid-prodtype">{t.colorTitles.carton}</h2>
       
       {renderColorGrid(colorsOrder)}
       </div>
       <div className="color-group">
-     <h2>{t.colorTitles.servetele}</h2>
+     <h2 className="grid-prodtype">{t.colorTitles.servetele}</h2>
       
       {renderColorGrid(colorsOrder)}
       </div>
       <div className="color-group">
-     <h2>{t.colorTitles.caiete}</h2>
+     <h2 className="grid-prodtype">{t.colorTitles.caiete}</h2>
       
       {renderColorGrid(colorsOrder)}
       </div>

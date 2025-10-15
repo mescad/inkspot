@@ -1,79 +1,145 @@
-.card {
-  width: 300px; /* 🟢 Fixed width that maintains original sizing */
-  max-width: 90vw;
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 50px 15px 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
-  text-align: center;
+/* ===============================
+   Product Card – Final Fixed Version
+   =============================== */
 
-
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+   .card {
+    width: 300px;
+    max-width: 90vw;
+    height: 500px;
+    position: relative;
+    border-radius: 10px;
+    padding: 50px 15px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   
-
-  height: 500px;
-}
-
-
-  .card-name{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  
+    /* Tint variables (default “glass”) */
+    --t1: rgba(255,255,255,0.30);
+    --t2: rgba(255,255,255,0.15);
+  
+    /* Glass tint only (image handled by ::before) */
+    background: linear-gradient(135deg, var(--t1), var(--t2));
+  
+    /* Glass blur effect */
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    overflow: hidden;
+    isolation: isolate; /* keeps pseudo-element layering contained */
+  
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+  /* ✨ Image layer */
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(../../assets/prod2.png) center / cover no-repeat;
+    z-index: -1; /* behind the tint */
+    transform: scale(1.2);      /* ✅ slight zoom-in */
+    transform-origin: center;
+  }
+  
+  /* Hover elevation */
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.35),
+      0 18px 40px rgba(0,0,0,0.3),
+      0 6px 18px rgba(0,0,0,0.22);
+  }
+  
+  /* Loading line effect */
+  .card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background: var(--card-gradient, linear-gradient(90deg, #4f46e5, #ec4899));
+    transform: translateX(-100%);
+    transition: transform 0.8s ease;
+  }
+  
+  .card:hover::after {
+    transform: translateX(0);
+  }
+  
+  /* Ensure content sits above the background */
+  .card > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* ---------- Inner Elements ---------- */
+  
+  .card-name {
     font-size: 1.6rem;
   }
   
   .card-image {
-   
     width: 60%;
-    height: 50%; /* Maintain aspect ratio */
-    transition: transform 0.3s ease;
+    height: 50%;
+    object-fit: contain;
   }
   
-  .card-image:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-  }
-
-  .card-description{
-    display: flex;
-    text-align: center;
-    
+  .card-description {
     width: auto;
     text-align: left;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding-left: 10%;
-    padding-right: 10%;
-
+    margin: 20px 0;
+    padding: 0 10%;
   }
-
-  .card-button{
+  
+  .card-button {
     color: white;
     width: 80%;
     height: 50px;
     margin-top: 10px;
-    background-color: black;
-    border-radius: 10px;
     margin-bottom: 20px;
-    cursor: pointer;
+    background-color: #10111d;
+    border-radius: 10px;
     font-size: 20px;
+    cursor: pointer;
     transition: transform 0.3s ease;
   }
-
-  .card-button:hover {
-    transform: scale(1.1); /* Enlarge the button to 110% of its original size */
-  }
-
-
   
-  .colorscheme {
-    width: 300px;
-    height: 40px;
-    background-color: blue;
+  .card-button:hover {
+    transform: scale(1.1);
   }
+  
+  /* ---------- Color Variants ---------- */
+  
+  .card.solvent-card {
+    --card-gradient: linear-gradient(90deg, #9333ea, #8b5cf6);
+    --t1: rgba(147, 51, 234, 0.20);
+    --t2: rgba(139, 92, 246, 0.20);
+  }
+  
+  .card.apa-card {
+    --card-gradient: linear-gradient(90deg, #3b82f6, #06b6d4);
+    --t1: rgba(59, 130, 246, 0.20);
+    --t2: rgba(6, 182, 212, 0.20);
+  }
+  
+  .card.bocika-card {
+    --card-gradient: linear-gradient(90deg, #f59e0b, #fbbf24);
+    --t1: rgba(245, 158, 11, 0.20);
+    --t2: rgba(251, 191, 36, 0.20);
+  }
+  
+  .card.aux-card {
+    --card-gradient: linear-gradient(90deg, #10b981, #14b8a6);
+    --t1: rgba(16, 185, 129, 0.20);
+    --t2: rgba(20, 184, 166, 0.20);
+  }
+  
+  /* ---------- Layout Containers ---------- */
   
   .product-cart {
     margin-top: 20px;
@@ -82,43 +148,42 @@
     justify-content: space-evenly;
   }
   
-
-
+  .colorscheme {
+    width: 300px;
+    height: 40px;
+    background-color: blue;
+  }
+  
+  /* ---------- Responsive Adjustments ---------- */
+  
   @media (min-width: 1440px) {
-    .card {
-      width: 300px; /* ✅ Fit 4 cards per row cleanly */
-    }
+    .card { width: 300px; }
   }
-
+  
   @media (min-width: 1024px) and (max-width: 1439px) {
-    .card {
-      width: 360px; /* 🔧 slightly larger cards */
-    }
+    .card { width: 360px; }
   }
-
-  /* Tablets (max-width: 768px) */
+  
   @media (max-width: 768px) {
     .card {
       width: 80%;
       height: auto;
-      padding: 10px;
-      padding-top: 30px;
+      padding: 30px 10px 10px;
       margin: 0 auto;
     }
-    
+  
     .card-image {
       width: 100%;
       height: auto;
-      aspect-ratio: 4 / 3; /* ✅ Maintains proportion */
-      object-fit: contain; /* or `cover` if you want it to fill the box */
+      aspect-ratio: 4 / 3;
+      object-fit: contain;
     }
-    
+  
     .colorscheme {
       width: 80%;
-      height: 40px;
       margin: 0 auto;
     }
-    
+  
     .product-cart {
       flex-direction: column;
       gap: 15px;
@@ -126,36 +191,77 @@
     }
   }
   
-  /* Mobile Phones (max-width: 480px) */
   @media (max-width: 480px) {
     .card {
-      width: calc(100% - 20px); /* Card takes full width minus a 20px margin */
-      max-width: 360px;         /* Maximum width is 360px on larger mobile screens */
+      width: calc(100% - 20px);
+      max-width: 360px;
       height: auto;
-      padding: 10px;
-      padding-top: 20px;
+      padding: 20px 10px 10px;
       margin: 0 auto;
     }
-    
+  
     .card-image {
       width: 70%;
       height: auto;
     }
-    
+  
     .colorscheme {
       width: 100%;
-      height: 40px;
       margin: 0 auto;
     }
-    
+  
     .product-cart {
       flex-direction: column;
       gap: 10px;
       align-items: center;
     }
-    
   }
   
 
 
- 
+  .card-cyan {
+    background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.15)), cyan;
+  }
+  .card-magenta {
+    background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.15)), magenta;
+  }
+  .card-yellow {
+    background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.15)), yellow;
+  }
+  .card-orange {
+    background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.15)), orange;
+  }
+  .card-green {
+    background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.15)), green;
+  }
+  .card-blue {
+    background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.15)), royalblue;
+  }
+
+
+
+
+  /* Color-specific gradients */
+.card.solvent-card {
+  --card-gradient: linear-gradient(90deg, #9333ea, #8b5cf6);
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(139, 92, 246, 0.2)),
+              rgba(255, 255, 255, 0.25);
+}
+
+.card.apa-card {
+  --card-gradient: linear-gradient(90deg, #3b82f6, #06b6d4);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(6, 182, 212, 0.2)),
+              rgba(255, 255, 255, 0.25);
+}
+
+.card.bocika-card {
+  --card-gradient: linear-gradient(90deg, #f59e0b, #fbbf24);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(251, 191, 36, 0.2)),
+              rgba(255, 255, 255, 0.25);
+}
+
+.card.aux-card {
+  --card-gradient: linear-gradient(90deg, #10b981, #14b8a6);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(20, 184, 166, 0.2)),
+              rgba(255, 255, 255, 0.25);
+}

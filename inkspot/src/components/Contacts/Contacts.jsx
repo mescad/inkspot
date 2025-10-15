@@ -48,7 +48,7 @@ function Contacts() {
   return (
     <div id='contacts' className="contact-container">
       
-        <h1>{t.title}</h1>
+        <h1 className="contact-title">{t.title}</h1>
 
         
 

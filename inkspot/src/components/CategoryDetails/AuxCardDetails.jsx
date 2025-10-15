@@ -20,7 +20,7 @@ function AuxCardDetails({pdfRO,pdfRU,pdfENG,productTitle,descriptionText}){
         
 
 <div className="product-details">
-      <h2>{productTitle}</h2>
+      <h2 className='subcard-title'>{productTitle}</h2>
       <section className="prod-info">
         <div className="prod-description">
           <h3>{t.descriptionTitle}</h3>
@@ -44,11 +44,11 @@ function AuxCardDetails({pdfRO,pdfRU,pdfENG,productTitle,descriptionText}){
       </section>
       <section className='options'>
 
-        <h2>{t.worksBestWith}</h2>
+        <h2 className='options-title'>{t.worksBestWith}</h2>
         <div className='option-list'>
-        <OptionCard name={'optionx'}/>
-        <OptionCard name={'optionx'}/>
-        <OptionCard name={'optionx'}/>
+        <OptionCard name={'Euroflex EXT HD'}/>
+        <OptionCard name={'Euroflex INT HD'}/>
+        <OptionCard name={'RENFLEX'}/>
         </div>
 
        

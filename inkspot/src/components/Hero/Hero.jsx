@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { LanguageContext } from "../Translations/LanguageContext";
 import translations from "../Translations/translations";
 
+
 function Hero(){
 
     const { language } = useContext(LanguageContext);
@@ -23,8 +24,10 @@ function Hero(){
         <div className="hero">
           
             {/*<img className="heroimage" alt="heroimage" src={heroImg}/>*/}
-            <div className="hero-group">   
+            <div className="hero-group">  
+            <div class="hero-spot"> 
             <h1 className="hero-title">{t.heroTitle}</h1>
+            </div>
             <h2 className="hero-subtitle">{t.heroSubtitle}</h2>
             <button className="hero-button" onClick={handleProductClick}>{t.heroButton}</button>
             </div>

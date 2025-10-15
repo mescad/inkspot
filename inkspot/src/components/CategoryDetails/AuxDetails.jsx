@@ -31,7 +31,7 @@ const AuxDetails = () => {
 
   return (
     <div className="product-details">
-      <h2>{t.productTitle}</h2>
+     
 
       <div className="bocika-grid">
 

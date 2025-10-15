@@ -8,18 +8,7 @@
 }
 
 
-.bocika-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 330px;
-    height: 370px;
-    border: 1px solid grey;
-    border-radius: 10px;
-    padding-bottom: 20px;
-    transition: transform 0.3s ease-in-out; /* Smooth transition */
-  }
-  
+
   .bocika-card:hover {
     transform: scale(1.1); /* Increase size by 10% */
   }

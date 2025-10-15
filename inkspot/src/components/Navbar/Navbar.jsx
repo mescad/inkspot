@@ -2,7 +2,7 @@ import { useContext, useRef, useEffect, useState } from "react";
 import { LanguageContext } from "../Translations/LanguageContext";
 import translations from "../Translations/translations";
 import "./Navbar.css";
-import logo from '../../assets/logo.png'
+import logo from '../../assets/newlogo.png'
 
 import usFlag from "../../assets/uk-flag.png"; // English
 import roFlag from "../../assets/ro-flag.png"; // Romana

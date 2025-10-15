@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import '../About/About.css';
 
-import bocika from '../../assets/bocika.png';
+import logonew from '../../assets/newlogo.png';
 
 import { LanguageContext } from "../Translations/LanguageContext";
 import translations from "../Translations/translations";
@@ -27,7 +27,7 @@ function About(){
 
         </div>
         <div className="about-img">
-            <img src={bocika} alt="About Us" />
+            <img src={logonew} alt="About Us" />
 
 
         </div>

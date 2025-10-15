@@ -53,7 +53,7 @@ function SubCardDetails({pdfRO,pdfRU,pdfENG,title,descriptionText}){
 
 
     <div className="product-details">
-      <h2>{title}</h2>
+      <h2 className="subcard-title">{title}</h2>
       <section className="prod-info">
         <div className="prod-description">
           <h3>{t.descriptionTitle}</h3>

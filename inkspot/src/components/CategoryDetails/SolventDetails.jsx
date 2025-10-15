@@ -3,7 +3,7 @@ import { LanguageContext } from "../Translations/LanguageContext";
 import translations from "../Translations/translations";
 
 import SubCard from "./SubCard";
-import solvent from '../../assets/solvent.png'
+import solvent from '../../assets/solvent1.png'
 import './SolventDetails.css'
 
 
