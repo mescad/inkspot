@@ -1,17 +1,19 @@
-import './AuxCardDetails.css'
+import './BocikaCardDetails.css'
 import React, { useContext } from "react";
 import { LanguageContext } from "../Translations/LanguageContext";
 import translations from "../Translations/translations";
 
 import OptionCard from './OptionCard';
 
-function AuxCardDetails({pdfRO,pdfRU,pdfENG,productTitle,descriptionText}){
+function BocikaCardDetails({pdfSecRO,pdfSecRU,pdfSecENG,pdfTechRO,pdfTechRU,pdfTechENG,productTitle,descriptionText,downloadFilesSecurity,param1,key1,param2,key2,param3,key3}){
 
 
   // Consume the current language from the global context
   const { language } = useContext(LanguageContext);
   // Access the translations for the current language for SolventDetails
   const t = translations[language].SolventDetails;
+
+  const bt=translations[language].BocikaDetails;
 
   const openPDF = (pdfPath) => {
     window.open(pdfPath, '_blank', 'noopener,noreferrer');
@@ -29,8 +31,12 @@ function AuxCardDetails({pdfRO,pdfRU,pdfENG,productTitle,descriptionText}){
           <p>{descriptionText}</p>
         </div>
         <div className="prod-charact">
-          <h3>Characteistici</h3>
-          <p>{descriptionText}</p>
+          <h3>{bt.consistency}</h3>
+          <ul>
+            <li>{param1}: {key1}</li>
+            <li>{param2}: {key2}</li>
+            <li>{param3}: {key3}</li>
+          </ul>
         </div>
 </div>
 
@@ -41,19 +47,20 @@ function AuxCardDetails({pdfRO,pdfRU,pdfENG,productTitle,descriptionText}){
             <li>{t.technicalList.mass}</li>
             <li>{t.technicalList.temperature}</li>
           </ul>
-          <h3>Applications</h3>
-          <ul>
-            <li>{t.technicalList.producer}</li>
-            <li>{t.technicalList.mass}</li> 
-          </ul>
+         
 
-          
+          <h2 className="pdf-title">{downloadFilesSecurity}</h2>
+          <div className="pdf-downloads">
+          <button type="button" className='pdf-button' onClick={() => openPDF(pdfSecRO)}>RO</button>
+          <button type="button" className='pdf-button' onClick={() => openPDF(pdfSecRU)}>RUS</button>
+          <button type="button" className='pdf-button' onClick={() => openPDF(pdfSecENG)}>ENG</button>
+          </div>
 
           <h2 className="pdf-title">{t.downloadFiles}</h2>
           <div className="pdf-downloads">
-          <button type="button" className='pdf-button' onClick={() => openPDF(pdfRO)}>RO</button>
-          <button type="button" className='pdf-button' onClick={() => openPDF(pdfRU)}>RUS</button>
-          <button type="button" className='pdf-button' onClick={() => openPDF(pdfENG)}>ENG</button>
+          <button type="button" className='pdf-button' onClick={() => openPDF(pdfTechRO)}>RO</button>
+          <button type="button" className='pdf-button' onClick={() => openPDF(pdfTechRU)}>RUS</button>
+          <button type="button" className='pdf-button' onClick={() => openPDF(pdfTechENG)}>ENG</button>
           </div>
 
 
@@ -85,4 +92,4 @@ function AuxCardDetails({pdfRO,pdfRU,pdfENG,productTitle,descriptionText}){
 
 
 
-export default AuxCardDetails
+export default BocikaCardDetails

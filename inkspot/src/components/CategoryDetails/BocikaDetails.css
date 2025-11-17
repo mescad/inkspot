@@ -78,7 +78,7 @@
   
   @media (max-width: 767px) {
     .bocika-grid {
-      grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+      grid-template-columns: repeat(1, 1fr); /* 2 columns for tablets */
       gap: 10px;
     }
   }

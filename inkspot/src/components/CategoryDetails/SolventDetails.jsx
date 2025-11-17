@@ -91,11 +91,16 @@ const SolventDetails = () => {
             </button>
 
             {/* Render the selected product details component */}
-            {selectedProduct === "EUROFLEX-EXT-HD" && <SubCardDetails title={t.cardTitles.card1} pdfRO={EuroflexEXTHD_RO} pdfRU={EuroflexEXTHD_RO} pdfENG={EuroflexEXTHD_RO} descriptionText={t.descriptionText.card1} />}
-            {selectedProduct === "EUROFLEX-INT-HD" && <SubCardDetails title={t.cardTitles.card2} pdfRO={EuroflexINTHD_RO} pdfRU={EuroflexINTHD_RO} pdfENG={EuroflexINTHD_RO} descriptionText={t.descriptionText.card2} />}
-            {selectedProduct === "REFLEX" && <SubCardDetails title={t.cardTitles.card3} pdfRO={EuroflexRenflex_RO} pdfRU={EuroflexRenflex_RO} pdfENG={EuroflexRenflex_RO} descriptionText={t.descriptionText.card3} />}
-            {selectedProduct === "2CFLEXO" && <SubCardDetails title={t.cardTitles.card4} pdfRO={Euroflex2C_ENG} pdfRU={Euroflex2C_ENG} pdfENG={Euroflex2C_ENG} descriptionText={t.descriptionText.card4} />}
-            {selectedProduct === "EUROFLEXU" && <SubCardDetails title={t.cardTitles.card5} pdfRO={EuroflexUniversal_ENG} pdfRU={EuroflexUniversal_ENG} pdfENG={EuroflexUniversal_ENG} descriptionText={t.descriptionText.card5} />}
+            {selectedProduct === "EUROFLEX-EXT-HD" && <SubCardDetails title={t.cardTitles.card1} pdfRO={EuroflexEXTHD_RO} pdfRU={EuroflexEXTHD_RO} pdfENG={EuroflexEXTHD_RO} descriptionText={t.descriptionText.card1} characteristicsText={t.characteristicsText.card1}
+             sup1={t.applicationList.card1.support1} sup2={t.applicationList.card1.support2} sup3={t.applicationList.card1.support3} sup4={t.applicationList.card1.support4} sup5={t.applicationList.card1.support5} sup6={t.applicationList.card1.support6} />}
+            {selectedProduct === "EUROFLEX-INT-HD" && <SubCardDetails title={t.cardTitles.card2} pdfRO={EuroflexINTHD_RO} pdfRU={EuroflexINTHD_RO} pdfENG={EuroflexINTHD_RO} descriptionText={t.descriptionText.card2} characteristicsText={t.characteristicsText.card2}
+            sup1={t.applicationList.card2.support1} sup2={t.applicationList.card2.support2} sup3={t.applicationList.card2.support3} sup4={t.applicationList.card2.support4} sup5={t.applicationList.card2.support5} sup6={t.applicationList.card2.support6} />}
+            {selectedProduct === "REFLEX" && <SubCardDetails title={t.cardTitles.card3} pdfRO={EuroflexRenflex_RO} pdfRU={EuroflexRenflex_RO} pdfENG={EuroflexRenflex_RO} descriptionText={t.descriptionText.card3} characteristicsText={t.characteristicsText.card3}
+            sup1={t.applicationList.card3.support1} sup2={t.applicationList.card3.support2} sup3={t.applicationList.card3.support3} sup4={t.applicationList.card3.support4} sup5={t.applicationList.card3.support5}  />}
+            {selectedProduct === "2CFLEXO" && <SubCardDetails title={t.cardTitles.card4} pdfRO={Euroflex2C_ENG} pdfRU={Euroflex2C_ENG} pdfENG={Euroflex2C_ENG} descriptionText={t.descriptionText.card4}  characteristicsText={t.characteristicsText.card4}
+            sup1={t.applicationList.card4.support1} sup2={t.applicationList.card4.support2} sup3={t.applicationList.card4.support3} sup4={t.applicationList.card4.support4} sup5={t.applicationList.card4.support5} />}
+            {selectedProduct === "EUROFLEXU" && <SubCardDetails title={t.cardTitles.card5} pdfRO={EuroflexUniversal_ENG} pdfRU={EuroflexUniversal_ENG} pdfENG={EuroflexUniversal_ENG} descriptionText={t.descriptionText.card5} characteristicsText={t.characteristicsText.card5}
+            sup1={t.applicationList.card5.support1} sup2={t.applicationList.card5.support2} sup3={t.applicationList.card5.support3} sup4={t.applicationList.card5.support4} sup5={t.applicationList.card5.support5} sup6={t.applicationList.card5.support6} sup7={t.applicationList.card5.support7} sup8={t.applicationList.card5.support8}/>}
           </div>
         </div>
       )}

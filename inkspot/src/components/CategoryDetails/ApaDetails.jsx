@@ -38,6 +38,7 @@ const ApaDetails = () => {
             imgsrc={apa}
             details={t.cardDescription.card1}
             onClick={() => setSelectedProduct("Eurokraft VHT")}
+            
             />
 <SubCard className="solvent-card"
             name={t.cardTitles.card2}
@@ -84,12 +85,70 @@ const ApaDetails = () => {
             </button>
 
             {/* Render the selected product details component */}
-            {selectedProduct === "Eurokraft VHT" && <ApaSubCardDetails productTitle={t.cardTitles.card1} pdfRO={EurokraftVHT_RO} pdfRU={EurokraftVHT_RO} pdfENG={EurokraftVHT_RO} descriptionText={t.descriptionText.card1} />}
-            {selectedProduct === "Eurokraft RT" && <ApaSubCardDetails productTitle={t.cardTitles.card2} pdfRO={EurokraftRT_RO} pdfRU={EurokraftRT_RO} pdfENG={EurokraftRT_RO} descriptionText={t.descriptionText.card2}  />}
-            {selectedProduct === "Eurokraft FL" && <ApaSubCardDetails productTitle={t.cardTitles.card3} pdfRO={EurokraftFL_RO} pdfRU={EurokraftFL_RO} pdfENG={EurokraftFL_RO} descriptionText={t.descriptionText.card3}  />}
-            {selectedProduct === "Eurokraft Gloss" && <ApaSubCardDetails productTitle={t.cardTitles.card4} pdfRO={EurokraftGloss_RO} pdfRU={EurokraftGloss_RO} pdfENG={EurokraftGloss_RO} descriptionText={t.descriptionText.card4}  />}
-            {selectedProduct === "Euraqua MAIL" && <ApaSubCardDetails productTitle={t.cardTitles.card5} pdfRO={EuroAquaMAIL_RO} pdfRU={EuroAquaMAIL_RO} pdfENG={EuroAquaMAIL_RO} descriptionText={t.descriptionText.card5}  />}
-            {selectedProduct === "Euraqua SP" && <ApaSubCardDetails productTitle={t.cardTitles.card6} pdfRO={EuroAquaSP_RO} pdfRU={EuroAquaSP_RO} pdfENG={EuroAquaSP_RO} descriptionText={t.descriptionText.card6}  />}
+            {selectedProduct === "Eurokraft VHT" && <ApaSubCardDetails productTitle={t.cardTitles.card1} pdfRO={EurokraftVHT_RO} pdfRU={EurokraftVHT_RO} pdfENG={EurokraftVHT_RO} descriptionText={t.descriptionText.card1} 
+            sup1={t.applicationList.card1.support1}
+            sup2={t.applicationList.card1.support2}
+            sup3={t.applicationList.card1.support3}
+            sup4={t.applicationList.card1.support4}
+            char1={t.characteristicsText.card1.charact1}
+            char2={t.characteristicsText.card1.charact2}
+            char3={t.characteristicsText.card1.charact3}
+            char4={t.characteristicsText.card1.charact4}
+            char5={t.characteristicsText.card1.charact5}/>}
+            {selectedProduct === "Eurokraft RT" && <ApaSubCardDetails productTitle={t.cardTitles.card2} pdfRO={EurokraftRT_RO} pdfRU={EurokraftRT_RO} pdfENG={EurokraftRT_RO} descriptionText={t.descriptionText.card2}
+            sup1={t.applicationList.card2.support1}
+            sup2={t.applicationList.card2.support2}
+            sup3={t.applicationList.card2.support3}
+            sup4={t.applicationList.card2.support4}
+            char1={t.characteristicsText.card2.charact1}
+            char2={t.characteristicsText.card2.charact2}
+            char3={t.characteristicsText.card2.charact3}
+            char4={t.characteristicsText.card2.charact4}
+            char5={t.characteristicsText.card2.charact5}
+            char6={t.characteristicsText.card2.charact6}
+            char7={t.characteristicsText.card2.charact7}  />}
+            {selectedProduct === "Eurokraft FL" && <ApaSubCardDetails productTitle={t.cardTitles.card3} pdfRO={EurokraftFL_RO} pdfRU={EurokraftFL_RO} pdfENG={EurokraftFL_RO} descriptionText={t.descriptionText.card3}
+            sup1={t.applicationList.card3.support1}
+            sup2={t.applicationList.card3.support2}
+            sup3={t.applicationList.card3.support3}
+            sup4={t.applicationList.card3.support4}
+            char1={t.characteristicsText.card3.charact1}
+            char2={t.characteristicsText.card3.charact2}
+            char3={t.characteristicsText.card3.charact3}
+            char4={t.characteristicsText.card3.charact4}
+            char5={t.characteristicsText.card3.charact5}  />}
+            {selectedProduct === "Eurokraft Gloss" && <ApaSubCardDetails productTitle={t.cardTitles.card4} pdfRO={EurokraftGloss_RO} pdfRU={EurokraftGloss_RO} pdfENG={EurokraftGloss_RO} descriptionText={t.descriptionText.card4} 
+            sup1={t.applicationList.card4.support1}
+            sup2={t.applicationList.card4.support2}
+            sup3={t.applicationList.card4.support3}
+            sup4={t.applicationList.card4.support4}
+            char1={t.characteristicsText.card4.charact1}
+            char2={t.characteristicsText.card4.charact2}
+            char3={t.characteristicsText.card4.charact3}
+            char4={t.characteristicsText.card4.charact4}
+            char5={t.characteristicsText.card4.charact5} />}
+            {selectedProduct === "Euraqua MAIL" && <ApaSubCardDetails productTitle={t.cardTitles.card5} pdfRO={EuroAquaMAIL_RO} pdfRU={EuroAquaMAIL_RO} pdfENG={EuroAquaMAIL_RO} descriptionText={t.descriptionText.card5}
+            sup1={t.applicationList.card5.support1}
+            sup2={t.applicationList.card5.support2}
+            sup3={t.applicationList.card5.support3}
+            sup4={t.applicationList.card5.support4}
+            char1={t.characteristicsText.card5.charact1}
+            char2={t.characteristicsText.card5.charact2}
+            char3={t.characteristicsText.card5.charact3}
+            char4={t.characteristicsText.card5.charact4}
+            char5={t.characteristicsText.card5.charact5}  />}
+            {selectedProduct === "Euraqua SP" && <ApaSubCardDetails productTitle={t.cardTitles.card6} pdfRO={EuroAquaSP_RO} pdfRU={EuroAquaSP_RO} pdfENG={EuroAquaSP_RO} descriptionText={t.descriptionText.card6}
+            sup1={t.applicationList.card6.support1}
+            sup2={t.applicationList.card6.support2}
+            sup3={t.applicationList.card6.support3}
+            sup4={t.applicationList.card6.support4}
+            char1={t.characteristicsText.card6.charact1}
+            char2={t.characteristicsText.card6.charact2}
+            char3={t.characteristicsText.card6.charact3}
+            char4={t.characteristicsText.card6.charact4}
+            char5={t.characteristicsText.card6.charact5}
+            char6={t.characteristicsText.card6.charact6}
+            char7={t.characteristicsText.card6.charact7}  />}
           </div>
         </div>
       )}

@@ -1,23 +1,44 @@
 /* Base styles */
 
+.solv-subcard-title{
+  color: white;
+  -webkit-text-stroke: 0.2px black;
+}
 
 .prod-info {
     display: flex;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     border: 2px solid grey;
-    margin-bottom: 30px;
-   
+    margin-bottom: 30px;  
+}
+
+.prod-main {
+  width: 60%;
+  text-align: left;
+  padding-right: 10px;
+  padding-left: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(251, 251, 251);
 }
 
 .prod-description {
-    width: 60%;
     text-align: left;
     padding-right: 10px;
     padding-left: 20px;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 500;
     color: rgb(251, 251, 251);
+}
+
+.prod-charact{
+  text-align: left;
+  padding-right: 10px;
+  padding-left: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(251, 251, 251);
 }
 
 .prod-technical {
@@ -31,8 +52,9 @@
 }
 
 .prod-technical li {
-    font-size: 20px;
+    font-size: 16px;
 }
+
 .pdf-downloads{
   display: flex;
   gap: 20px;
@@ -71,15 +93,12 @@
 }
 
 
-.subcard-title{
-  color: white;
-  -webkit-text-stroke: 0.2px black;
 
-}
 
 .grid-prodtype{
   color: white;
   -webkit-text-stroke: 0.2px black;
+  background-color:rgba(0,0,0,0.85);
 
 }
 
@@ -187,85 +206,77 @@
 }
 
 
-@media (min-width: 1024px) and (max-width: 1439px) {
-  .pdf-button{
-    margin-left: 0;
-    width: 80px;
-  }
-
-  .prod-description p{
-    font-size: 14px;
-  }
-
-  .pdf-downloads{
-    padding-left: 20px;
-
-    
-  }
-}
 
 
-@media (min-width:768px) and (max-width:840px){
-  .pdf-buttons{
-    width: 55px;
-    padding: 5px;
-  }
-
-
-}
 
 /* Responsive Styles */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1440px) {
   
-  .prod-description p{
-    font-size: 13px;
+  .prod-description{
+    font-size: 16px;
   }
-  .pdf-downloads{
-    padding-left: 20px;
-    padding-right: 5px;
-
-    
-  }
-
-
-
-  .pdf-title{
+  .prod-charact{
     font-size: 16px;
   }
 
-  .pdf-button{
-    margin-left: 0;
-    width: 60px;
+  .prod-technical h3 {
+    padding-left: 16px;
+    font-size: 16px;
+}
+
+  .prod-technical{
+    width: 50%;
   }
+  .pdf-downloads{
+    padding-right: 10px;
+  }
+ 
 
 }
 /* Tablets (max-width: 768px) */
 @media (max-width: 767px) {
+
+  .solv-subcard-title{
+    color: black;
+  }
+  .prod-main{
+    width: 85%;
+  }
   .prod-info {
     flex-direction: column;
     padding: 10px;
     margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.85);
   }
 
   .prod-description {
     width: 100%;
-    font-size: 18px;
+    font-size: 16px;
     padding: 10px;
+    font-weight: 500;
+  }
+
+  .prod-charact{
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    font-weight: 500;
   }
 
   .prod-technical {
     width: 100%;
-    font-size: 18px;
-    padding: 10px;
+    font-size: 16px;
+    padding: 0;
+    font-weight: 500;
   }
 
   .prod-technical h3 {
     padding-left: 10px;
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .prod-technical li {
-    font-size: 18px;
+    font-size: 16px;
   }
   
   .color-grid {
@@ -281,11 +292,31 @@
   
   .palete-description {
     font-size: 18px;
+    color: black;
+  }
+
+  .pdf-title{
+    font-size: 16px;
+    padding-left: 5px;
+    margin-top: 20px;
+  }
+
+  .pdf-downloads{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .pdf-button{
+    width: 70px;
+    margin-left: 0;
   }
 }
 
 /* Mobile Phones (max-width: 480px) */
-@media (max-width: 480px) {
+@media (max-width: 479px) {
   .prod-info {
     flex-direction: column;
     padding: 5px;
@@ -294,14 +325,26 @@
 
   .prod-description {
     width: 90%;
-    font-size: 15px;
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  .prod-main{
+    width: 85%;
+  }
+
+  .prod-charact{
+    
+    font-size: 13px;
+    font-weight: 500;
     padding: 5px 10px;
   }
 
   .prod-technical {
-    width: 100%;
-    font-size: 16px;
+    width: 85%;
+    font-size: 15px;
     padding: 5px 10px;
+    margin: auto;
   }
 
   .prod-technical h3 {
@@ -310,7 +353,16 @@
   }
 
   .prod-technical li {
-    font-size: 16px;
+    font-size: 15px;
+  }
+
+
+  .pdf-title{
+    text-align: center;
+  }
+
+  .pdf-downloads{
+    margin: auto;
   }
   
   .color-grid {

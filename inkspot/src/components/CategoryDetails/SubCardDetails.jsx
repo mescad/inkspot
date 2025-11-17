@@ -3,7 +3,7 @@ import { LanguageContext } from "../Translations/LanguageContext";
 import translations from "../Translations/translations";
 import './SubCardDetails.css'
 
-function SubCardDetails({pdfRO,pdfRU,pdfENG,title,descriptionText}){
+function SubCardDetails({pdfRO,pdfRU,pdfENG,title,descriptionText,characteristicsText,sup1,sup2,sup3,sup4,sup5,sup6}){
   // Consume the current language from the global context
   const { language } = useContext(LanguageContext);
   // Access the translations for the current language for SolventDetails
@@ -47,25 +47,46 @@ function SubCardDetails({pdfRO,pdfRU,pdfENG,title,descriptionText}){
   };
 
 
+
+
+  const supports = [sup1, sup2, sup3, sup4, sup5, sup6].filter(Boolean);
+
     return(
 
 
 
 
     <div className="product-details">
-      <h2 className="subcard-title">{title}</h2>
+      <h2 className="solv-subcard-title">{title}</h2>
+
       <section className="prod-info">
+        <div className="prod-main">
+
         <div className="prod-description">
           <h3>{t.descriptionTitle}</h3>
           <p>{descriptionText}</p>
         </div>
+        <div className="prod-charact">
+          <h3>{t.characteristicsTitle}</h3>
+          <p>{characteristicsText}</p>
+        </div>
+        </div>
+      
         <div className="prod-technical">
           <h3>{t.technicalTitle}</h3>
           <ul>
             <li>{t.technicalList.producer}</li>
             <li>{t.technicalList.mass}</li>
-            
+            <li>{t.technicalList.validity}</li>
+            <li>{t.technicalList.caution}</li>
           </ul>
+          <h3>{t.applicationTitle}</h3>
+          <ul>
+            {supports.map((sup, index) => (
+              <li key={index}>{sup}</li>
+            ))}
+          </ul>
+
           <h2 className="pdf-title">{t.downloadFiles}</h2>
           <div className="pdf-downloads">
           <button type="button" className='pdf-button' onClick={() => openPDF(pdfRO)}>RO</button>
@@ -76,6 +97,9 @@ function SubCardDetails({pdfRO,pdfRU,pdfENG,title,descriptionText}){
    
         </div>
       </section>
+
+
+
       {renderColorGrid(colorsOrder)}
       </div>
     

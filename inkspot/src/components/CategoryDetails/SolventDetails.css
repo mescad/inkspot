@@ -43,7 +43,7 @@
 /* Close button with a higher z-index to ensure it appears above all content */
 .solvent-close-button {
     position: absolute;
-    top: 10px;
+    top: 20px;
     right: 15px;
     background: none;
     border: none;
@@ -126,6 +126,7 @@ body.modal-open {
     .solvent-modal-content {
         width: 100%;
     }
+
     
     .solventcard-modal-content {
         background: white;
@@ -139,4 +140,10 @@ body.modal-open {
         position: relative;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
+    .subcard-title{
+        color: black;
+        -webkit-text-stroke: 0.2px black;
+      
+      }
+
 }
