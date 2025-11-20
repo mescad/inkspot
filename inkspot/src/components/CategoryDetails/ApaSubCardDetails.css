@@ -5,94 +5,229 @@
   -webkit-text-stroke: 0.2px black;
 }
 
+.product-go-back-button {
+  position: absolute;
+  top: -50px;
+  left: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  z-index: 100;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.product-go-back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 1);
+  transform: translateX(-2px);
+}
+
+.apa-product-details {
+  position: relative;
+}
+
+.product-details {
+  position: relative;
+}
+
 .apa-prod-info {
     display: flex;
-    background-color: rgba(0, 0, 0, 0.6); /* 60% opaque black */
-    border-radius: 10px;
-    border: 2px solid grey;
-    margin-bottom: 30px;  
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid black;
+    margin-bottom: 30px;
+    padding: 32px;
+    gap: 40px;
+    max-width: 100%;
 }
 
 .apa-prod-main{
-  width: 60%;
-  text-align: left;
-  padding-right: 10px;
-  padding-left: 20px;
-  font-size: 20px;
-  font-weight: 500;
-  color: rgb(251, 251, 251);
-
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
-.apa-prod-description {
 
+.apa-prod-description {
     text-align: left;
-    padding-right: 10px;
-    padding-left: 20px;
-    font-size: 20px;
-    font-weight: 500;
-    color: rgb(251, 251, 251);
-  
+}
+
+.apa-prod-description h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 14px 0;
+}
+
+.apa-prod-description p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.75;
+    color: rgba(0, 0, 0, 0.9);
+    margin: 0;
+    max-width: 100%;
 }
 
 .apa-prod-charact{
   text-align: left;
-    padding-right: 10px;
-    padding-left: 20px;
-    font-size: 20px;
-    font-weight: 500;
-    color: rgb(251, 251, 251);
+}
+
+.apa-prod-charact h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 14px 0;
+}
+
+.apa-prod-charact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.apa-prod-charact li {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.75;
+    color: rgba(0, 0, 0, 0.9);
+    margin: 0;
+    padding: 6px 0;
+    position: relative;
+    padding-left: 16px;
+}
+
+.apa-prod-charact li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 300;
 }
 
 .apa-prod-technical {
-    width: 40%;
-    text-align: left;
-    color: aliceblue;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 32px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .apa-prod-technical h3 {
-    padding-left: 20px;
+    font-size: 19px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 8px 0;
+    padding: 0;
+}
+
+.apa-prod-technical ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
 }
 
 .apa-prod-technical li {
-    font-size: 16px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.9;
+    color: rgba(0, 0, 0, 0.85);
+    padding: 6px 0;
+    position: relative;
+    padding-left: 16px;
+}
+
+.apa-prod-technical li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 300;
 }
 
 
 .pdf-downloads{
   display: flex;
-  gap: 20px;
-  padding-bottom: 20px;
-  
+  gap: 12px;
+  padding-top: 8px;
+  justify-content: center;
+  align-items: center;
 }
+
 .pdf-title{
-  font-size: 20px;
-  padding-left: 20px;
-}
-.pdf-button{
-  width: 100px;
-  height: 42px;
-  padding: 0 16px;
-  border: none;
-  border-radius: 8px;
-  background: linear-gradient(145deg, #e0e0e0, #ffffff);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: #1a1a1a;
+  font-size: 14px;
   font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
   letter-spacing: 0.5px;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-
+  margin: 0 0 12px 0;
+  padding: 0;
+  text-align: center;
 }
 
+.pdf-button{
+  min-width: 70px;
+  height: 36px;
+  padding: 0 16px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+
+.pdf-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  pointer-events: none;
+  z-index: -1;
+}
 
 .pdf-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .pdf-button:active {
   transform: translateY(0);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 
@@ -119,11 +254,36 @@
     width: 120px;
     height: 140px;
     gap: 15px;
-    transition: transform 0.3s ease-in-out; /* Smooth transition */
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    overflow: visible;
 }
 
 .color-card:hover {
-    transform: scale(1.1); /* Increase size by 10% */
+    transform: scale(1.1);
+}
+
+.color-count-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #dc2626;
+    color: white;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border: 2px solid white;
 }
 
 .color-title {
@@ -204,10 +364,34 @@
 
 
 @media (min-width: 1440px){
-  .pdf-downloads{
-    padding-left: 20px;
+  .apa-prod-info {
+    padding: 28px;
+    gap: 36px;
+  }
 
-    
+  .apa-prod-main {
+    gap: 28px;
+  }
+
+  .apa-prod-description h3,
+  .apa-prod-charact h3,
+  .apa-prod-technical h3,
+  .pdf-title {
+    font-size: 15px;
+  }
+
+  .apa-prod-description p,
+  .apa-prod-charact li {
+    font-size: 16px;
+  }
+
+  .apa-prod-technical {
+    padding-left: 36px;
+    gap: 24px;
+  }
+
+  .apa-prod-technical li {
+    font-size: 15px;
   }
 }
 
@@ -215,73 +399,99 @@
 
 /* Responsive Styles */
 @media (min-width:768px) and (max-width:1440px){
-    .apa-prod-description{
-      font-size: 16px;
-    }
-    .apa-prod-charact{
-      font-size: 16px;
-    }
-
-    .apa-prod-technical h3 {
-      padding-left: 16px;
-      font-size: 16px;
+  .product-go-back-button {
+    top: -45px;
+    left: 12px;
+    width: 38px;
+    height: 38px;
+    font-size: 19px;
   }
 
-    .apa-prod-technical{
-      width: 50%;
-    }
+  .apa-prod-info {
+    padding: 20px;
+    gap: 24px;
+  }
 
-    .pdf-downloads{
-      padding-right: 10px;
-    }
+  .apa-prod-main {
+    gap: 20px;
+  }
+
+  .apa-prod-description p,
+  .apa-prod-charact li {
+    font-size: 14px;
+  }
+
+  .apa-prod-technical {
+    padding-left: 24px;
+    gap: 18px;
+  }
+
+  .apa-prod-technical li {
+    font-size: 13px;
+  }
 }
 
 /* Tablets (max-width: 768px) */
 @media (max-width: 767px) {
+  .product-go-back-button {
+    top: -40px;
+    left: 10px;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    border-radius: 6px;
+  }
 
   .apa-subcard-title{
-    color: black;
+    color: rgb(255, 255, 255);
   }
   .apa-prod-info {
     flex-direction: column;
-    padding: 10px;
-    margin-bottom: 20px;
-    background-color: rgba(0, 0, 0, 0.85);
+    padding: 20px;
+    margin-bottom: 24px;
+    gap: 24px;
   }
 
-  .apa-prod-main{
-    width: 85%;
-  }
-
-  .apa-prod-description {
+  .apa-prod-main {
     width: 100%;
-    font-size: 16px;
-    padding: 10px;
-    font-weight: 500;
+    gap: 20px;
   }
 
-  .apa-prod-charact{
+  .apa-prod-description,
+  .apa-prod-charact {
     width: 100%;
-    font-size: 16px;
-    padding: 10px;
-    font-weight: 500;
+    padding: 0;
+  }
+
+  .apa-prod-description h3,
+  .apa-prod-charact h3,
+  .apa-prod-technical h3 {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .apa-prod-description p,
+  .apa-prod-charact li {
+    font-size: 14px;
   }
 
   .apa-prod-technical {
     width: 100%;
-    font-size: 16px;
     padding: 0;
-    font-weight: 500;
+    padding-top: 20px;
+    border-left: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    gap: 18px;
   }
 
-
   .apa-prod-technical h3 {
-    padding-left: 10px;
-    font-size: 16px;
+    font-size: 13px;
+    padding: 0;
+    margin-bottom: 4px;
   }
 
   .apa-prod-technical li {
-    font-size: 16px;
+    font-size: 13px;
   }
   
   .color-grid {
@@ -302,73 +512,128 @@
 
 
   .pdf-title{
-    font-size: 16px;
-    padding-left: 5px;
-    margin-top: 20px;
+    font-size: 13px;
+    padding: 0;
+    margin-top: 0;
+    text-align: center;
   }
 
   .pdf-downloads{
-    width: 90%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: auto;
+    margin: 0;
+    gap: 10px;
   }
 
   .pdf-button{
-    width: 70px;
-    margin-left: 0;
+    min-width: 60px;
+    height: 32px;
+    font-size: 12px;
+    padding: 0 12px;
+  }
+
+  .color-category-header {
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .color-category-header .apa-grid-prodtype {
+    font-size: 16px;
+  }
+
+  .category-count-badge {
+    min-width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+
+  .category-chevron {
+    font-size: 12px;
   }
 }
 
 /* Mobile Phones (max-width: 480px) */
 @media (max-width: 479px) {
+  .product-go-back-button {
+    top: -45px;
+    left: 8px;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    border-radius: 6px;
+  }
+
   .apa-prod-info {
     flex-direction: column;
-    padding: 5px;
-    margin-bottom: 15px;
+    padding: 16px;
+    margin-bottom: 20px;
+    gap: 20px;
   }
 
-  .apa-prod-description {
-    width: 90%;
+  .apa-prod-main {
+    width: 100%;
+    gap: 18px;
+  }
+
+  .apa-prod-description,
+  .apa-prod-charact {
+    width: 100%;
+    padding: 0;
+  }
+
+  .apa-prod-description h3,
+  .apa-prod-charact h3,
+  .apa-prod-technical h3 {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .apa-prod-description p,
+  .apa-prod-charact li {
     font-size: 13px;
-    padding: 5px 10px;
-  }
-
-  .apa-prod-main{
-    width: 85%;
-  }
-
-  .apa-prod-charact{
-    
-    font-size: 15px;
-    font-weight: 500;
-    padding: 5px 10px;
+    line-height: 1.5;
   }
 
   .apa-prod-technical {
-    width: 85%;
-    font-size: 15px;
-    padding: 5px 10px;
-    
-    margin: auto;
+    width: 100%;
+    padding: 0;
+    padding-top: 18px;
+    border-left: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    gap: 16px;
   }
 
   .apa-prod-technical h3 {
-    padding-left: 5px;
-    font-size: 18px;
+    font-size: 12px;
+    padding: 0;
+    margin-bottom: 4px;
   }
 
   .apa-prod-technical li {
-    font-size: 15px;
+    font-size: 12px;
+    line-height: 1.7;
   }
 
   .pdf-title{
+    font-size: 12px;
     text-align: center;
   }
 
   .pdf-downloads{
-    margin: auto;
+    width: 100%;
+    margin: 0;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pdf-button {
+    min-width: 55px;
+    height: 30px;
+    font-size: 11px;
+    padding: 0 10px;
   }
   
 
@@ -387,10 +652,187 @@
   .palete-description {
     font-size: 14px;
   }
+
+  .color-category-header {
+    padding: 10px 12px;
+    gap: 8px;
+    border-radius: 8px;
+  }
+
+  .color-category-header .apa-grid-prodtype {
+    font-size: 14px;
+  }
+
+  .category-title-wrapper {
+    gap: 6px;
+  }
+
+  .category-count-badge {
+    min-width: 22px;
+    height: 22px;
+    font-size: 11px;
+    padding: 0 6px;
+  }
+
+  .category-chevron {
+    font-size: 11px;
+  }
 }
 
 
 .color-group{
-    border-top: 1px solid grey;
     margin-top: 20px;
+}
+
+.color-category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(107, 114, 128, 0.4);
+    border-radius: 10px;
+    padding: 14px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 0;
+    position: relative;
+    backdrop-filter: blur(10px);
+    gap: 16px;
+    box-shadow: 0 2px 8px rgba(107, 114, 128, 0.15);
+}
+
+.color-category-header:hover {
+    background: linear-gradient(135deg, rgba(107, 114, 128, 0.4), rgba(156, 163, 175, 0.4));
+    border-color: rgba(107, 114, 128, 0.6);
+    transform: translateX(4px);
+    box-shadow: 0 4px 16px rgba(107, 114, 128, 0.3);
+}
+
+.category-title-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 8px;
+}
+
+.color-category-header .apa-grid-prodtype {
+    margin: 0;
+    text-align: center;
+    color: black;
+    -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.5);
+    background-color: transparent;
+}
+
+.category-count-badge {
+    background: #dc2626;
+    color: white;
+    border-radius: 50%;
+    min-width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border: 2px solid white;
+    flex-shrink: 0;
+}
+
+.category-chevron {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.95);
+    transition: transform 0.3s ease;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.category-chevron.expanded {
+    transform: rotate(180deg);
+}
+
+.color-grid-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    padding: 0;
+}
+
+.color-grid-container.expanded {
+    max-height: 2000px;
+    padding: 20px 0;
+    transition: max-height 0.5s ease-in, padding 0.4s ease-in;
+}
+
+.color-select-wrapper {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.color-selection-help {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    margin-bottom: 20px;
+    -webkit-text-stroke: 0.2px black;
+}
+
+.color-selection-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.color-selection-current {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 16px;
+    margin: 0;
+    -webkit-text-stroke: 0.2px black;
+}
+
+.color-selection-current span {
+    font-weight: 700;
+    color: #fff;
+}
+
+.color-add-button {
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+    min-width: 200px;
+}
+
+.color-add-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.5);
+    background: linear-gradient(135deg, #059669, #047857);
+}
+
+.color-add-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: rgba(107, 114, 128, 0.5);
+}
+
+@media (min-width: 1440px) {
+    .color-add-button {
+        padding: 16px 40px;
+        font-size: 20px;
+        min-width: 240px;
+    }
 }

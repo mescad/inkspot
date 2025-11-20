@@ -40,7 +40,13 @@ function Catalog() {
             imgsrc={solvent}
             details={t.solventCardDescription}
             onClick={() => setSelectedProduct("solvent")}
-            
+            productData={{
+              id: "catalog-solvent",
+              name: t.solventCard,
+              description: t.solventCardDescription,
+              image: solvent,
+              category: t.catalogTitle,
+            }}
           />
           <Card
            className="apa-card"
@@ -48,7 +54,13 @@ function Catalog() {
             imgsrc={apa}
             details={t.apaCardDescription}
             onClick={() => setSelectedProduct("apa")}
-            
+            productData={{
+              id: "catalog-apa",
+              name: t.apaCard,
+              description: t.apaCardDescription,
+              image: apa,
+              category: t.catalogTitle,
+            }}
           />
           <Card
             className="bocika-card"
@@ -56,7 +68,13 @@ function Catalog() {
             imgsrc={bocika}
             details={t.bocikaCardDescription}
             onClick={() => setSelectedProduct("bocika")}
-            
+            productData={{
+              id: "catalog-bocika",
+              name: t.bocikaCard,
+              description: t.bocikaCardDescription,
+              image: bocika,
+              category: t.catalogTitle,
+            }}
           />
           <Card
             className="aux-card"
@@ -64,7 +82,13 @@ function Catalog() {
             imgsrc={aux}
             details={t.auxCardDescription}  
             onClick={() => setSelectedProduct("aux")}
-            
+            productData={{
+              id: "catalog-aux",
+              name: t.auxCard,
+              description: t.auxCardDescription,
+              image: aux,
+              category: t.catalogTitle,
+            }}
           />
         </div>
       </div>

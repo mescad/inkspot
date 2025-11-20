@@ -1,13 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useMemo, useState } from "react";
 import { LanguageContext } from "../Translations/LanguageContext";
 import translations from "../Translations/translations";
 import './ApaSubCardDetails.css'
+import { useCart } from "../Cart/CartContext";
 
-function ApaSubCardDetails({pdfRO,pdfRU,pdfENG,productTitle,descriptionText,sup1,sup2,sup3,sup4,char1,char2,char3,char4,char5}){
+function ApaSubCardDetails({productId, productImage, shortDescription, pdfRO,pdfRU,pdfENG,productTitle,descriptionText,sup1,sup2,sup3,sup4,char1,char2,char3,char4,char5, onClose}){
   // Consume the current language from the global context
   const { language } = useContext(LanguageContext);
-  // Access the translations for the current language for SolventDetails
+  const globalTranslations = translations[language];
+  // Access the translations for the current language for ApaDetails
   const t = translations[language].ApaDetails;
+  const { addItem, items, showNotification } = useCart();
+  const baseProductId = productId || productTitle;
 
   // Define the order of colors (keys matching your translations)
   const colorsOrder = [
@@ -26,18 +30,121 @@ function ApaSubCardDetails({pdfRO,pdfRU,pdfENG,productTitle,descriptionText,sup1
     "others",
   ];
 
+  // Define the 5 categories
+  const categories = [
+    { key: "hirtie", title: t.colorTitles.hirtie },
+    { key: "pahare", title: t.colorTitles.pahare },
+    { key: "carton", title: t.colorTitles.carton },
+    { key: "servetele", title: t.colorTitles.servetele },
+    { key: "caiete", title: t.colorTitles.caiete },
+  ];
 
-  
-  
-  // Helper to render a grid of color cards
-  const renderColorGrid = (colors) => (
+  // State for pending selections: { category-color: count }
+  const [pendingSelections, setPendingSelections] = useState({});
+  // State for expanded categories
+  const [expandedCategories, setExpandedCategories] = useState({});
+
+  const handleColorSelect = (categoryKey, colorKey) => {
+    const selectionKey = `${categoryKey}-${colorKey}`;
+    setPendingSelections((prev) => {
+      const next = { ...prev };
+      next[selectionKey] = (next[selectionKey] || 0) + 1;
+      return next;
+    });
+  };
+
+  const toggleCategory = (categoryKey) => {
+    setExpandedCategories((prev) => ({
+      ...prev,
+      [categoryKey]: !prev[categoryKey],
+    }));
+  };
+
+  // Get cart counts per category-color combination
+  const cartColorCounts = useMemo(() => {
+    if (!baseProductId) {
+      return {};
+    }
+    return items.reduce((acc, item) => {
+      if (item.id.startsWith(`${baseProductId}-`)) {
+        const parts = item.id.substring(baseProductId.length + 1).split('-');
+        if (parts.length >= 2) {
+          const categoryKey = parts[0];
+          const colorKey = parts.slice(1).join('-');
+          const selectionKey = `${categoryKey}-${colorKey}`;
+          acc[selectionKey] = (acc[selectionKey] || 0) + item.quantity;
+        }
+      }
+      return acc;
+    }, {});
+  }, [items, baseProductId]);
+
+  // Calculate total count per category (cart + pending)
+  const getCategoryCount = (categoryKey) => {
+    let total = 0;
+    colorsOrder.forEach((color) => {
+      const selectionKey = `${categoryKey}-${color}`;
+      total += (cartColorCounts[selectionKey] || 0) + (pendingSelections[selectionKey] || 0);
+    });
+    return total;
+  };
+
+  const hasPendingSelections = Object.keys(pendingSelections).length > 0;
+
+  const handleAddToCart = () => {
+    if (!hasPendingSelections) return;
+
+    Object.entries(pendingSelections).forEach(([selectionKey, count]) => {
+      const [categoryKey, ...colorParts] = selectionKey.split('-');
+      const colorKey = colorParts.join('-');
+      const categoryTitle = categories.find(cat => cat.key === categoryKey)?.title || categoryKey;
+      
+      addItem({
+        id: `${baseProductId}-${categoryKey}-${colorKey}`,
+        name: `${productTitle} - ${categoryTitle} - ${t.colorNames[colorKey]}`,
+        description: shortDescription || descriptionText,
+        image: productImage || "",
+        category: t.productTitle,
+        quantity: count,
+      });
+    });
+    showNotification(globalTranslations.cartSuccess || globalTranslations.cartAddSuccess || "Items added to cart");
+    setPendingSelections({});
+  };
+
+  const pendingSummary = Object.entries(pendingSelections)
+    .map(([selectionKey, count]) => {
+      const [categoryKey, ...colorParts] = selectionKey.split('-');
+      const colorKey = colorParts.join('-');
+      const categoryTitle = categories.find(cat => cat.key === categoryKey)?.title || categoryKey;
+      return `${count} × ${categoryTitle} - ${t.colorNames[colorKey]}`;
+    })
+    .join(", ");
+
+  // Helper to render a grid of color cards for a specific category
+  const renderColorGrid = (colors, categoryKey) => (
     <section className="color-grid">
-      {colors.map((color) => (
-        <div key={color} className="color-card">
-          <div className={`palete palete-${color}`}></div>
-          <div className="palete-description">{t.colorNames[color]}</div>
-        </div>
-      ))}
+      {colors.map((color) => {
+        const selectionKey = `${categoryKey}-${color}`;
+        const totalCount = (cartColorCounts[selectionKey] || 0) + (pendingSelections[selectionKey] || 0);
+        return (
+          <button
+            type="button"
+            key={color}
+            className="color-card"
+            onClick={() => handleColorSelect(categoryKey, color)}
+            aria-pressed={false}
+          >
+            {totalCount > 0 ? (
+              <span className="color-count-badge">
+                {totalCount}
+              </span>
+            ) : null}
+            <div className={`palete palete-${color}`}></div>
+            <div className="palete-description">{t.colorNames[color]}</div>
+          </button>
+        );
+      })}
     </section>
   );
 
@@ -53,6 +160,11 @@ function ApaSubCardDetails({pdfRO,pdfRU,pdfENG,productTitle,descriptionText,sup1
 
 
     <div className="apa-product-details">
+      {onClose && (
+        <button type="button" className="product-go-back-button" onClick={onClose} aria-label="Go back">
+          ←
+        </button>
+      )}
       <h2 className ='apa-subcard-title'>{productTitle}</h2>
     
       <section className="apa-prod-info">
@@ -98,31 +210,58 @@ function ApaSubCardDetails({pdfRO,pdfRU,pdfENG,productTitle,descriptionText,sup1
         </div>
       </section>
 
-      <div className="color-group">
-     <h2 className="apa-grid-prodtype">{t.colorTitles.hirtie}</h2>
-      {renderColorGrid(colorsOrder)}
-      </div>
+      {categories.map((category) => {
+        const isExpanded = expandedCategories[category.key];
+        const categoryCount = getCategoryCount(category.key);
+        return (
+          <div key={category.key} className="color-group">
+            <button
+              type="button"
+              className="color-category-header"
+              onClick={() => toggleCategory(category.key)}
+              aria-expanded={isExpanded}
+            >
+              <span className={`category-chevron ${isExpanded ? 'expanded' : ''}`}>
+                ▼
+              </span>
+              <div className="category-title-wrapper">
+                <h2 className="apa-grid-prodtype">{category.title}</h2>
+                {categoryCount > 0 && (
+                  <span className="category-count-badge">
+                    {categoryCount}
+                  </span>
+                )}
+              </div>
+              <span className={`category-chevron ${isExpanded ? 'expanded' : ''}`}>
+                ▼
+              </span>
+            </button>
+            <div className={`color-grid-container ${isExpanded ? 'expanded' : ''}`}>
+              {renderColorGrid(colorsOrder, category.key)}
+            </div>
+          </div>
+        );
+      })}
 
-      <div className="color-group">
-     <h2 className="apa-grid-prodtype">{t.colorTitles.pahare}</h2>
-      {renderColorGrid(colorsOrder)}
+      <div className="color-select-wrapper">
+        <p className="color-selection-help">{globalTranslations.colorPrompt}</p>
+        <div className="color-selection-panel">
+          {hasPendingSelections ? (
+            <p className="color-selection-current">
+              {globalTranslations.colorSelectedLabel}:{" "}
+              <span>{pendingSummary}</span>
+            </p>
+          ) : null}
+          <button
+            type="button"
+            className="color-add-button"
+            onClick={handleAddToCart}
+            disabled={!hasPendingSelections}
+          >
+            {globalTranslations.addToCart}
+          </button>
+        </div>
       </div>
-
-      <div className="color-group">
-     <h2 className="apa-grid-prodtype">{t.colorTitles.carton}</h2>
-      {renderColorGrid(colorsOrder)}
-      </div>
-
-      <div className="color-group">
-     <h2 className="apa-grid-prodtype">{t.colorTitles.servetele}</h2>
-      {renderColorGrid(colorsOrder)}
-      </div>
-
-      <div className="color-group">
-     <h2 className="apa-grid-prodtype">{t.colorTitles.caiete}</h2> 
-      {renderColorGrid(colorsOrder)}
-      </div>
-      
       </div>
     
     

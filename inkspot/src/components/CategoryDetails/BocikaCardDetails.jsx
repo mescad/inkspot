@@ -5,7 +5,7 @@ import translations from "../Translations/translations";
 
 import OptionCard from './OptionCard';
 
-function BocikaCardDetails({pdfSecRO,pdfSecRU,pdfSecENG,pdfTechRO,pdfTechRU,pdfTechENG,productTitle,descriptionText,downloadFilesSecurity,param1,key1,param2,key2,param3,key3}){
+function BocikaCardDetails({pdfSecRO,pdfSecRU,pdfSecENG,pdfTechRO,pdfTechRU,pdfTechENG,productTitle,descriptionText,downloadFilesSecurity,param1,key1,param2,key2,param3,key3, onClose}){
 
 
   // Consume the current language from the global context
@@ -22,6 +22,11 @@ function BocikaCardDetails({pdfSecRO,pdfSecRU,pdfSecENG,pdfTechRO,pdfTechRU,pdfT
         
 
 <div className="product-details">
+      {onClose && (
+        <button type="button" className="product-go-back-button" onClick={onClose} aria-label="Go back">
+          ←
+        </button>
+      )}
       <h2 className='subcard-title'>{productTitle}</h2>
 
       <section className="prod-info">

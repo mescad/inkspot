@@ -111,9 +111,22 @@ body.modal-open {
     right: 15px;
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 28px;
     cursor: pointer;
     z-index: 1110;
+    color: rgba(0, 0, 0, 0.7);
+    transition: all 0.2s ease;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.solventcard-close-button:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.9);
 }
 
 /* Prevent background scrolling when modal is open */
@@ -130,6 +143,9 @@ body.modal-open {
     
     .solventcard-modal-content {
         background: white;
+        background-image: url(../../assets/her2.png);
+        background-position: center;
+        background-size: cover;
         padding: 50px 10px 50px 10px; /* Increased top padding to create space for the close button */
         border-radius: 8px;
         width: 70%;

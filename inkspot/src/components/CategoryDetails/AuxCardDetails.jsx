@@ -5,7 +5,7 @@ import translations from "../Translations/translations";
 
 import OptionCard from './OptionCard';
 
-function AuxCardDetails({pdfRO,pdfRU,pdfENG,productTitle,descriptionText}){
+function AuxCardDetails({pdfRO,pdfRU,pdfENG,productTitle,descriptionText, onClose}){
 
 
   // Consume the current language from the global context
@@ -20,6 +20,11 @@ function AuxCardDetails({pdfRO,pdfRU,pdfENG,productTitle,descriptionText}){
         
 
 <div className="product-details">
+      {onClose && (
+        <button type="button" className="product-go-back-button" onClick={onClose} aria-label="Go back">
+          ←
+        </button>
+      )}
       <h2 className='subcard-title'>{productTitle}</h2>
 
       <section className="prod-info">

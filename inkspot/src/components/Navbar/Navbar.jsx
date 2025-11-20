@@ -1,4 +1,5 @@
 import { useContext, useRef, useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { LanguageContext } from "../Translations/LanguageContext";
 import translations from "../Translations/translations";
 import "./Navbar.css";
@@ -7,11 +8,14 @@ import logo from '../../assets/newlogo.png'
 import usFlag from "../../assets/uk-flag.png"; // English
 import roFlag from "../../assets/ro-flag.png"; // Romana
 import ruFlag from "../../assets/ru-flag.png"; // Rusa
+import { useCart } from "../Cart/CartContext";
 
-function Navbar() {
+function Navbar({ onCartToggle }) {
   const { language, setLanguage } = useContext(LanguageContext);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const { itemCount } = useCart();
+  const location = useLocation();
 
   // Get current translations
   const t = translations[language];
@@ -56,19 +60,40 @@ function Navbar() {
     }
   };
 
+  const handleHomeClick = (e) => {
+    if (location.pathname === "/") {
+      // If already on home page, scroll to top
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    // Otherwise, Link will handle navigation
+  };
+
   return (
     <nav className="navbar">
-      <div className="nav-group">
-      <img className='nav-logo' alt='logo' src={logo}/>
-      <h1 className="nav-title">Galapac</h1>
-
-      </div>
+      <Link to="/" onClick={handleHomeClick} className="nav-logo-link">
+        <div className="nav-group">
+          <img className='nav-logo' alt='logo' src={logo}/>
+          <h1 className="nav-title">Galapac</h1>
+        </div>
+      </Link>
      
       <div className="nav-options">
-        <h2>{t.navbarHome}</h2>
+        <Link to="/" onClick={handleHomeClick} className="nav-home-link">
+          <h2>{t.navbarHome}</h2>
+        </Link>
         
         <h2 className="contacts" onClick={handleContactsClick}>{t.contacts}</h2>
         <h2 className="about-us" onClick={handleAboutClick}>{t.navbarAbout}</h2>
+        <button
+          type="button"
+          className="cart-trigger"
+          onClick={onCartToggle}
+        >
+          <span className="cart-icon" role="img" aria-label="cart">🛒</span>
+          <span className="cart-label">{t.cart}</span>
+          {itemCount > 0 && <span className="cart-count">{itemCount}</span>}
+        </button>
         <div className="dropdown" ref={dropdownRef}>
           <button className="dropdown-toggle" onClick={toggleDropdown}>
             <img src={flags[language]} alt={language} title={language} className="flag" />
