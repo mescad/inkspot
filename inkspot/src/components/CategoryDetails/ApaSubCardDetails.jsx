@@ -172,7 +172,16 @@ function ApaSubCardDetails({productId, productImage, shortDescription, pdfRO,pdf
 
         <div className="apa-prod-description">
           <h3>{t.descriptionTitle}</h3>
-          <p>{descriptionText}</p>
+          <div className="apa-prod-description-content">
+            {productImage && (
+              <img 
+                src={productImage} 
+                alt={productTitle} 
+                className="apa-prod-description-image"
+              />
+            )}
+            <p>{descriptionText}</p>
+          </div>
         </div>
         <div className="apa-prod-charact">
           <h3>{t.characteristicsTitle}</h3>

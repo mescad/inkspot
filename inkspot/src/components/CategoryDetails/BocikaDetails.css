@@ -3,8 +3,11 @@
   display: grid;
   place-items: center;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 30px;
   align-items: stretch;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 
@@ -68,17 +71,28 @@
   
   /* Responsive Styles */
   
-  /* Tablets (max-width: 768px) */
+  /* Tablets */
   @media (min-width:768px) and (max-width:1440px){
     .bocika-grid {
-      grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
+      padding: 15px;
     }
   }
   
+  /* Mobile */
   @media (max-width: 767px) {
     .bocika-grid {
-      grid-template-columns: repeat(1, 1fr); /* 2 columns for tablets */
-      gap: 10px;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 15px;
+      padding: 10px;
+    }
+  }
+
+  /* Small mobile */
+  @media (max-width: 480px) {
+    .bocika-grid {
+      gap: 12px;
+      padding: 8px;
     }
   }

@@ -2,7 +2,7 @@
 import './OptionCard.css'
 
 
-import solventpic from '../../assets/solvent1.png'
+import solvent3 from '../../assets/solvent3.png'
 
 
 function OptionCard (props){
@@ -11,7 +11,7 @@ function OptionCard (props){
         <div className='option-card'>
           <h2 className='option-name'>{props.name}
           </h2>
-          <img className="option-card-img" alt='option-pic' src={solventpic}/>
+          <img className="option-card-img" alt='option-pic' src={solvent3}/>
 
         </div>
     );

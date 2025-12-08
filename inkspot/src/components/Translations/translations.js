@@ -316,11 +316,11 @@ const translations = {
       BocikaDetails: {
         productTitle: "Solvents and Thinners",
         cardTitles: {
-          card1: "Flexographic Solvent (cube)",
-          card2: "Flexographic Solvent (170kg)",
-          card3: "Ethyl Acetate (180kg)",
-          card4: "Methoxypropanol (180kg)",
-          card5: "Ethoxypropanol (180kg)",
+          card1: "Flexographic Solvent",
+          card2: "Flexographic Solvent",
+          card3: "Ethyl Acetate",
+          card4: "Methoxypropanol",
+          card5: "Ethoxypropanol",
         },
         cardDescription:{
           card1: "Solvent flexo GRAFOPRINT CR-R is an efficient solvent for flexographic printing, ensuring optimal performance and enhanced safety.",
@@ -389,16 +389,27 @@ const translations = {
 
         downloadFiles:'Download Technical Files',
         downloadFilesSecurity:'Download Security Files',
+        technicalList: {
+          producer: "Producer: Euroink",
+          validity:"Shelf life: 12 months",
+          mass: {
+            card1: "Mass: 1000L",
+            card2: "Mass: 170kg",
+            card3: "Mass: 180kg",
+            card4: "Mass: 180kg",
+            card5: "Mass: 180kg",
+          },
+        },
       },
       AuxDetails: {
         productTitle: "Auxiliary Products",
         cardTitles: {
-          card1: "Washing Solution (20kg)",
-          card2: "Catalyst (20kg)",
-          card3: "Lamination Adhesive (25kg)",
-          card4: "Wax (20kg)",
-          card5: "Varnish (20kg)",
-          card6: "Primer (20kg)",
+          card1: "Washing Solution",
+          card2: "Catalyst",
+          card3: "Lamination Adhesive",
+          card4: "Wax",
+          card5: "Varnish",
+          card6: "Primer",
           card7: "Bioadhesive for clichés",
         },
         cardDescription:{
@@ -434,6 +445,19 @@ const translations = {
         },
         downloadFiles:'Download Technical Files',
         downloadFilesSecurity:'Download Security Files',
+        technicalList: {
+          producer: "Producer: Euroink",
+          validity:"Shelf life: 12 months",
+          mass: {
+            card1: "Mass: 20kg",
+            card2: "Mass: 20kg",
+            card3: "Mass: 25kg",
+            card4: "Mass: 20kg",
+            card5: "Mass: 20kg",
+            card6: "Mass: 20kg",
+            card7: "Mass: 5kg",
+          },
+        },
       },
       Catalog: {
         catalogTitle: "Product Catalog",
@@ -796,6 +820,17 @@ const translations = {
         },
         downloadFiles:'Descarcă fișiere tehnice',
         downloadFilesSecurity:'Descarcă fișiere cu date de securitate',
+        technicalList: {
+          producer: "Producator: Euroink",
+          validity:"Valabil: 12 luni",
+          mass: {
+            card1: "Masa: 1000L",
+            card2: "Masa: 170kg",
+            card3: "Masa: 180kg",
+            card4: "Masa: 180kg",
+            card5: "Masa: 180kg",
+          },
+        },
         consistency: "Consistență",
 param1: {
   card1: "Etanol",
@@ -884,6 +919,19 @@ key3: {
         },
         downloadFiles:'Descarcă fișiere tehnice',
         downloadFilesSecurity:'Descarcă fișiere cu date de securitate',
+        technicalList: {
+          producer: "Producator: Euroink",
+          validity:"Valabil: 12 luni",
+          mass: {
+            card1: "Masa: 20kg",
+            card2: "Masa: 20kg",
+            card3: "Masa: 25kg",
+            card4: "Masa: 20kg",
+            card5: "Masa: 20kg",
+            card6: "Masa: 20kg",
+            card7: "Masa: 5kg",
+          },
+        },
       },
       Catalog: {
         catalogTitle: "Catalog de Produse",
@@ -1218,11 +1266,11 @@ key3: {
       BocikaDetails: {
         productTitle: "Растворители и разбавители",
         cardTitles: {
-          card1: "Флексографический растворитель (куб)",
-          card2: "Флексографический растворитель (170кг)",
-          card3: "Этил ацетат (180кг)",
-          card4: "Метоксипропанол (180кг)",
-          card5: "Этоксипропанол (180кг)",
+          card1: "Флексографический растворитель",
+          card2: "Флексографический растворитель",
+          card3: "Этил ацетат",
+          card4: "Метоксипропанол",
+          card5: "Этоксипропанол",
         },
         cardDescription: {
           
@@ -1241,6 +1289,17 @@ key3: {
         },
         downloadFiles:'Скачать технические файлы',
         downloadFilesSecurity:'Скачать файлы с данными безопасности',
+        technicalList: {
+          producer: "Производитель: Euroink",
+          validity:"Срок годности: 12 месяцев.",
+          mass: {
+            card1: "Масса: 1000Л",
+            card2: "Масса: 170кг",
+            card3: "Масса: 180кг",
+            card4: "Масса: 180кг",
+            card5: "Масса: 180кг",
+          },
+        },
         consistency: "Консистенция",
 param1: {
   card1: "Этанол",
@@ -1289,12 +1348,12 @@ key3: {
       AuxDetails: {
         productTitle: "Аксессуары",
         cardTitles: {
-          card1: "Мощее средство (20кг)",
-          card2: "Катализатор (20кг)",
-          card3: "Клеящий состав для ламинации (25кг)",
-          card4: "Воск (20кг)",
-          card5: "Лак (20кг)",
-          card6: "Грунтовка (20кг)",
+          card1: "Мощее средство)",
+          card2: "Катализатор",
+          card3: "Клеящий состав для ламинации",
+          card4: "Воск",
+          card5: "Лак",
+          card6: "Грунтовка",
           card7: "Биоадгезив для клише",
         },
         cardDescription: {
@@ -1328,6 +1387,19 @@ key3: {
         },
         downloadFiles:'Скачать технические файлы',
         downloadFilesSecurity:'Скачать файлы с данными безопасности',
+        technicalList: {
+          producer: "Производитель: Euroink",
+          validity:"Срок годности: 12 месяцев.",
+          mass: {
+            card1: "Масса: 20кг",
+            card2: "Масса: 20кг",
+            card3: "Масса: 25кг",
+            card4: "Масса: 20кг",
+            card5: "Масса: 20кг",
+            card6: "Масса: 20кг",
+            card7: "Масса: 5кг",
+          },
+        },
       },
       Catalog: {
         catalogTitle: "Каталог продуктов",

@@ -6,6 +6,8 @@ import "./BocikaDetails.css"; // Or adjust the CSS file as needed
 import AuxCardDetails from "./AuxCardDetails";
 import SubCard from "./SubCard";
 import { useCart } from "../Cart/CartContext";
+import lamination2 from "../../assets/lamination2.png";
+import bioadhesive2 from "../../assets/bioadesiv.png";
 
 import washingPDF_RO from '../../assets/technicals/aux/TDS SOLUTIE SPALARE ANILOXI SOLVENT-RO.PDF'
 import catalystPDF_RO from '../../assets/technicals/aux/catalizator_RO.pdf'
@@ -28,6 +30,13 @@ const AuxDetails = () => {
   const closeModal = () => {
     setSelectedProduct(null); // Close the modal when clicking outside
   };
+
+  // Get technical details from translations - create card-specific technical details
+  const getTechnicalDetails = (cardNumber) => ({
+    producer: t.technicalList.producer,
+    mass: t.technicalList.mass[`card${cardNumber}`],
+    validity: t.technicalList.validity,
+  });
 
   // Calculate badge counts for each product
   const productBadgeCounts = useMemo(() => {
@@ -63,67 +72,74 @@ const AuxDetails = () => {
 
 <SubCard className="solvent-card"
         name={t.cardTitles.card1}
-        imgsrc={bucket20}
+        imgsrc={lamination2}
         details={t.cardDescription.card1}
         onClick={() => setSelectedProduct("washing")}
         productId="aux-washing"
         category={t.productTitle}
         badgeCount={productBadgeCounts["aux-washing"] || 0}
+        technicalDetails={getTechnicalDetails(1)}
         />
  <SubCard className="solvent-card"
         name={t.cardTitles.card2}
-        imgsrc={bucket20}
+        imgsrc={lamination2}
         details={t.cardDescription.card2}
         onClick={() => setSelectedProduct("catalyst")}
         productId="aux-catalyst"
         category={t.productTitle}
         badgeCount={productBadgeCounts["aux-catalyst"] || 0}
+        technicalDetails={getTechnicalDetails(2)}
         />
 
 <SubCard className="solvent-card"
         name={t.cardTitles.card3}
-        imgsrc={bucket20}
+        imgsrc={lamination2}
         details={t.cardDescription.card3}
         onClick={() => setSelectedProduct("adhesive")}
         productId="aux-adhesive"
         category={t.productTitle}
         badgeCount={productBadgeCounts["aux-adhesive"] || 0}
+        technicalDetails={getTechnicalDetails(3)}
         />
  <SubCard className="solvent-card"
         name={t.cardTitles.card4}
-        imgsrc={bucket20}
+        imgsrc={lamination2}
         details={t.cardDescription.card4}
         onClick={() => setSelectedProduct("wax")}
         productId="aux-wax"
         category={t.productTitle}
         badgeCount={productBadgeCounts["aux-wax"] || 0}
+        technicalDetails={getTechnicalDetails(4)}
         />
  <SubCard className="solvent-card"
         name={t.cardTitles.card5}
-        imgsrc={bucket20}
+        imgsrc={lamination2}
         details={t.cardDescription.card5}
         onClick={() => setSelectedProduct("varnish")}
         productId="aux-varnish"
         category={t.productTitle}
         badgeCount={productBadgeCounts["aux-varnish"] || 0}
+        technicalDetails={getTechnicalDetails(5)}
         />
 <SubCard className="solvent-card"
         name={t.cardTitles.card6}
-        imgsrc={bucket20}
+        imgsrc={lamination2}
         details={t.cardDescription.card6}
         onClick={() => setSelectedProduct("primer")}
         productId="aux-primer"
         category={t.productTitle}
         badgeCount={productBadgeCounts["aux-primer"] || 0}
+        technicalDetails={getTechnicalDetails(6)}
         />
  <SubCard className="solvent-card"
         name={t.cardTitles.card7}
-        imgsrc={bucket20}
+        imgsrc={bioadhesive2}
         details={t.cardDescription.card7}
         onClick={() => setSelectedProduct("bioadhesive")}
         productId="aux-bioadhesive"
         category={t.productTitle}
         badgeCount={productBadgeCounts["aux-bioadhesive"] || 0}
+        technicalDetails={getTechnicalDetails(7)}
         />
 
 
@@ -139,13 +155,13 @@ const AuxDetails = () => {
         </button>
 
         {/* Render the selected product details component */}
-        {selectedProduct === "washing" && <AuxCardDetails productTitle={t.cardTitles.card1} descriptionText={t.descriptionText.card1} pdfRO={washingPDF_RO} pdfRU={washingPDF_RO} pdfENG={washingPDF_RO} onClose={closeModal} />}
-        {selectedProduct === "catalyst" && <AuxCardDetails productTitle={t.cardTitles.card2} descriptionText={t.descriptionText.card2} pdfRO={catalystPDF_RO} pdfRU={catalystPDF_RO} pdfENG={catalystPDF_RO} onClose={closeModal} />}
-        {selectedProduct === "adhesive" && <AuxCardDetails productTitle={t.cardTitles.card3} descriptionText={t.descriptionText.card3} pdfRO={adhesivePDF_RO} pdfRU={adhesivePDF_RO} pdfENG={adhesivePDF_RO} onClose={closeModal} />}
-        {selectedProduct === "wax" && <AuxCardDetails productTitle={t.cardTitles.card4} descriptionText={t.descriptionText.card4} pdfRO={waxPDF_RO} pdfRU={waxPDF_RO} pdfENG={waxPDF_RO} onClose={closeModal} />}
-        {selectedProduct === "varnish" && <AuxCardDetails productTitle={t.cardTitles.card5} descriptionText={t.descriptionText.card5} pdfRO={varnishPDF_RO} pdfRU={varnishPDF_RO} pdfENG={varnishPDF_RO} onClose={closeModal} />}
-        {selectedProduct === "primer" && <AuxCardDetails productTitle={t.cardTitles.card6} descriptionText={t.descriptionText.card6} pdfRO={primerPDF_RO} pdfRU={primerPDF_RO} pdfENG={primerPDF_RO} onClose={closeModal} />}
-        {selectedProduct === "bioadhesive" && <AuxCardDetails productTitle={t.cardTitles.card7} descriptionText={t.descriptionText.card7} pdfRO={bioadhesivePDF_RO} pdfRU={bioadhesivePDF_RO} pdfENG={bioadhesivePDF_RO} onClose={closeModal} />}
+        {selectedProduct === "washing" && <AuxCardDetails productTitle={t.cardTitles.card1} descriptionText={t.descriptionText.card1} pdfRO={washingPDF_RO} pdfRU={washingPDF_RO} pdfENG={washingPDF_RO} productImage={lamination2} onClose={closeModal} />}
+        {selectedProduct === "catalyst" && <AuxCardDetails productTitle={t.cardTitles.card2} descriptionText={t.descriptionText.card2} pdfRO={catalystPDF_RO} pdfRU={catalystPDF_RO} pdfENG={catalystPDF_RO} productImage={lamination2} onClose={closeModal} />}
+        {selectedProduct === "adhesive" && <AuxCardDetails productTitle={t.cardTitles.card3} descriptionText={t.descriptionText.card3} pdfRO={adhesivePDF_RO} pdfRU={adhesivePDF_RO} pdfENG={adhesivePDF_RO} productImage={lamination2} onClose={closeModal} />}
+        {selectedProduct === "wax" && <AuxCardDetails productTitle={t.cardTitles.card4} descriptionText={t.descriptionText.card4} pdfRO={waxPDF_RO} pdfRU={waxPDF_RO} pdfENG={waxPDF_RO} productImage={lamination2} onClose={closeModal} />}
+        {selectedProduct === "varnish" && <AuxCardDetails productTitle={t.cardTitles.card5} descriptionText={t.descriptionText.card5} pdfRO={varnishPDF_RO} pdfRU={varnishPDF_RO} pdfENG={varnishPDF_RO} productImage={lamination2} onClose={closeModal} />}
+        {selectedProduct === "primer" && <AuxCardDetails productTitle={t.cardTitles.card6} descriptionText={t.descriptionText.card6} pdfRO={primerPDF_RO} pdfRU={primerPDF_RO} pdfENG={primerPDF_RO} productImage={lamination2} onClose={closeModal} />}
+        {selectedProduct === "bioadhesive" && <AuxCardDetails productTitle={t.cardTitles.card7} descriptionText={t.descriptionText.card7} pdfRO={bioadhesivePDF_RO} pdfRU={bioadhesivePDF_RO} pdfENG={bioadhesivePDF_RO} productImage={bioadhesive2} onClose={closeModal} />}
       </div>
     </div>
   )}

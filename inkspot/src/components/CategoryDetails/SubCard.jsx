@@ -54,7 +54,15 @@ function SubCard(props) {
       )}
       <img className="subcard-image" alt="product-img" src={props.imgsrc} />
       <h2 className="subcard-name">{props.name}</h2>
-      <p className="subcard-description">{props.details}</p>
+      {props.technicalDetails && (
+        <div className="subcard-technical">
+          <ul>
+            {props.technicalDetails.producer && <li>{props.technicalDetails.producer}</li>}
+            {props.technicalDetails.mass && <li>{props.technicalDetails.mass}</li>}
+            {props.technicalDetails.validity && <li>{props.technicalDetails.validity}</li>}
+          </ul>
+        </div>
+      )}
       <div className="subcard-actions">
         <button type="button" className="subcard-button" onClick={handleViewDetails}>
           {t.cardButton}

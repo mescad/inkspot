@@ -5,7 +5,7 @@ import translations from "../Translations/translations";
 
 import OptionCard from './OptionCard';
 
-function AuxCardDetails({pdfRO,pdfRU,pdfENG,productTitle,descriptionText, onClose}){
+function AuxCardDetails({pdfRO,pdfRU,pdfENG,productTitle,descriptionText,productImage, onClose}){
 
 
   // Consume the current language from the global context
@@ -31,7 +31,16 @@ function AuxCardDetails({pdfRO,pdfRU,pdfENG,productTitle,descriptionText, onClos
       <div className="prod-main">
         <div className="prod-description">
           <h3>{t.descriptionTitle}</h3>
-          <p>{descriptionText}</p>
+          <div className="prod-description-content">
+            {productImage && (
+              <img 
+                src={productImage} 
+                alt={productTitle} 
+                className="prod-description-image"
+              />
+            )}
+            <p>{descriptionText}</p>
+          </div>
         </div>
         <div className="prod-charact">
           <h3>Characteistici</h3>

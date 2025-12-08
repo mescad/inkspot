@@ -104,7 +104,16 @@ function SubCardDetails({productId, productImage, shortDescription, pdfRO,pdfRU,
 
         <div className="prod-description">
           <h3>{t.descriptionTitle}</h3>
-          <p>{descriptionText}</p>
+          <div className="prod-description-content">
+            {productImage && (
+              <img 
+                src={productImage} 
+                alt={title} 
+                className="prod-description-image"
+              />
+            )}
+            <p>{descriptionText}</p>
+          </div>
         </div>
         <div className="prod-charact">
           <h3>{t.characteristicsTitle}</h3>

@@ -5,7 +5,7 @@ import translations from "../Translations/translations";
 
 import OptionCard from './OptionCard';
 
-function BocikaCardDetails({pdfSecRO,pdfSecRU,pdfSecENG,pdfTechRO,pdfTechRU,pdfTechENG,productTitle,descriptionText,downloadFilesSecurity,param1,key1,param2,key2,param3,key3, onClose}){
+function BocikaCardDetails({pdfSecRO,pdfSecRU,pdfSecENG,pdfTechRO,pdfTechRU,pdfTechENG,productTitle,descriptionText,downloadFilesSecurity,param1,key1,param2,key2,param3,key3,productImage, onClose}){
 
 
   // Consume the current language from the global context
@@ -33,7 +33,16 @@ function BocikaCardDetails({pdfSecRO,pdfSecRU,pdfSecENG,pdfTechRO,pdfTechRU,pdfT
       <div className="prod-main">
         <div className="prod-description">
           <h3>{t.descriptionTitle}</h3>
-          <p>{descriptionText}</p>
+          <div className="prod-description-content">
+            {productImage && (
+              <img 
+                src={productImage} 
+                alt={productTitle} 
+                className="prod-description-image"
+              />
+            )}
+            <p>{descriptionText}</p>
+          </div>
         </div>
         <div className="prod-charact">
           <h3>{bt.consistency}</h3>

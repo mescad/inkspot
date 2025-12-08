@@ -12,6 +12,15 @@ import BocikaDetails from "../CategoryDetails/BocikaDetails";
 import SolventDetails from "../CategoryDetails/SolventDetails";
 import ApaDetails from "../CategoryDetails/ApaDetails";
 
+import solvent2 from "../../assets/solvent2.png";
+import apa2 from "../../assets/apa2.png";
+import lamination2 from "../../assets/lamination2.png";
+import bioadesiv from "../../assets/bioadesiv.png";
+import cube2 from "../../assets/cube2.png";
+import ethyl2 from "../../assets/ethyl2.png";
+import apa31 from "../../assets/apa3.2.png";
+import solvent31 from "../../assets/solvent3.2.png";
+
 import { useState, useContext } from "react";
 import { LanguageContext } from "../Translations/LanguageContext";
 import translations from "../Translations/translations";
@@ -37,7 +46,7 @@ function Catalog() {
           <Card
             className="solvent-card"
             name={t.solventCard}
-            imgsrc={solvent}
+            imgsrc={solvent31}
             details={t.solventCardDescription}
             onClick={() => setSelectedProduct("solvent")}
             productData={{
@@ -51,7 +60,7 @@ function Catalog() {
           <Card
            className="apa-card"
             name={t.apaCard}
-            imgsrc={apa}
+            imgsrc={apa31}
             details={t.apaCardDescription}
             onClick={() => setSelectedProduct("apa")}
             productData={{
@@ -65,7 +74,7 @@ function Catalog() {
           <Card
             className="bocika-card"
             name={t.bocikaCard}
-            imgsrc={bocika}
+            imgsrc={ethyl2}
             details={t.bocikaCardDescription}
             onClick={() => setSelectedProduct("bocika")}
             productData={{
@@ -79,7 +88,7 @@ function Catalog() {
           <Card
             className="aux-card"
             name={t.auxCard}
-            imgsrc={aux}
+            imgsrc={lamination2}
             details={t.auxCardDescription}  
             onClick={() => setSelectedProduct("aux")}
             productData={{
